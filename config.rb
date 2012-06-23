@@ -7,6 +7,9 @@ sass_dir = "content/media/css/sass"
 images_dir = "content/media/images"
 javascripts_dir = "content/media/js"
 
+# Disable creation of the ".sass-cache" directory:
+cache = false
+
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 
