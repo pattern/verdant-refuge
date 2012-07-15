@@ -1,6 +1,21 @@
 
 @import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+@import "fancy-buttons";
 
-.test {
-  font-weight: 400;
+$green: #31b66a;
+$light-green: #66e89e;
+$grey: #aaa;
+$blue-selection: #aedbe8;
+
+$margin-bottom: 1.25em;
+
+@mixin centered-base {
+  width: 43.75em;
+  margin: 0px auto;
+}
+
+.bold {
+  font-weight: 600;
 }

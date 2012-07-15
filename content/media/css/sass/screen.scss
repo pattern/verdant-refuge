@@ -1,0 +1,154 @@
+@import "base";
+
+::selection, ::-moz-selection, ::-webkit-selection {
+  background: lighten($blue-selection, 10%);
+}
+
+
+
+body {
+  border-top: .5em solid $green;
+  font-family: 'HelveticaNeue', Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+
+h1 {
+  font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: $margin-bottom;
+}
+
+/*
+h1.byline {
+  margin-bottom: 0;
+}
+*/
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: $margin-bottom/2;
+}
+
+p {
+  font-size: 1.125em;
+  margin-bottom: $margin-bottom;
+  line-height: 1.75em;
+}
+
+p.byline {
+  font-family: 'HelveticaNeue-Bold';
+  text-transform: uppercase;
+  font-size: .75em;
+  color: #aaa;
+}
+
+p.blurb {
+  font-size: 1.25em;
+  font-style: italic;
+  font-family: 'Palatino-Italic';
+  line-height: 2em;
+  color: #555;
+}
+
+button {
+  @include fancy-button(lighten($green, 25%), .8em, .8em);
+  font-weight: 300;
+}
+
+code {
+  background: #e0e0e0;
+  font-family: Monaco, Courier, "Courier New", monospace;
+  font-size: .875em;
+  padding: 2px;
+  color: darken($green, 25%);
+}
+
+pre {
+  display: block;
+  background: #e0e0e0;
+  line-height: 1.75em;
+  margin-bottom: $margin-bottom;
+  padding: 5px;
+  code {
+    color: #444;
+  }
+}
+
+blockquote {
+  background: lighten($green, 50%);
+  padding: 10px;
+  border-left: 5px solid lighten($green, 30%);
+  margin-bottom: $margin-bottom;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote span {
+  display: block;
+  text-align: right;
+  font-family: 'HelveticaNeue-LightItalic';
+  color: #555;
+}
+
+a, a:visited {
+  color: $green;
+  text-decoration: none;
+  border-bottom: 1px dotted #bbb;
+}
+
+a:hover, a:active {
+  color: darken($green, 20%);
+  border-bottom: 1px solid #bbb;
+}
+
+ul.tags {
+  @include pie-clearfix;
+  li {
+    display: inline;
+    float: left;
+    margin-right: 1em;
+  }
+}
+
+header {
+  background-color: lighten($green, 50%);
+  #header_inner {
+    @include centered-base;
+    padding: 2em;
+    margin-bottom: 2.5em;
+    h1 {
+      font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
+      font-size: 2.5em;
+      margin-bottom: .5em;
+      a {
+        border-bottom: none;
+      }
+      span {
+        color: $grey;
+      }
+      span:first-child {
+        color: $green;
+        font-weight: bold;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+#main {
+  @include centered-base;
+  padding: 0em 2em;
+}
+
+footer {
+  @include centered-base;
+  padding: 0em 2em 5em 2em;
+}
+

@@ -18,7 +18,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+  <title>{% block title %}{{ resource.meta.title }} | Verdant Refuge{% endblock %}</title>
   <meta name="description" content="{{ resource.meta.description }}">
   <meta name="author" content="{{ resource.meta.author }}">
 
@@ -31,7 +31,7 @@
   {% endblock favicons %}
 
   {% block css %}
-  <link rel="stylesheet" href="{{ media_url('css/base.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/screen.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   {% endblock css %}
 
@@ -45,8 +45,20 @@
   {% endblock endhead %}
 </head>
 <body>
-  {% block content %}
-  {% endblock content%}
+  <header>
+    <div id="header_inner">
+      <h1>
+        <a href="/"><span>Verdant</span><span>Refuge</span></a>
+      </h1>
+      <p>I'm <a href="/about">Jeff Pickelman</a>, founder of <a href="http://www.songed.com/">Songed</a>.<br />These are my thoughts, experiences, and trivialities.</p>
+    </div>
+  </header>
+  <div id="main" role="main">
+    {% block content %}{% endblock content%}
+  </div>
+  <footer>
+    <!-- Nothing Yet! -->
+  </footer>
   
   {% block js %}
     <!-- Javascript at the bottom for fast page loading -->
@@ -57,8 +69,12 @@
       <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js">\x3C/script>')</script>
     {% endblock jquery %}
     
+    <script src="{{ media_url('js/libs/jquery.timeago.js') }}"></script>
+    
+    <script>
     {% block scripts %}
     {% endblock scripts %}
+    </script>
   {% endblock js %}
 </body>
 </html>
