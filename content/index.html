@@ -1,8 +1,17 @@
 ---
-extends: base.j2
-default_block: content
-title: BASIC - A hyde website
-description: Home page for the BASIC hyde template
+title: Welcome
+description: Verdant Refuge - Jeff Pickelman's personal website.
 ---
 
-Hi!!
+{% filter markdown %}
+
+# Welcome!
+
+This is a line of text that will hopefully wrap all the way around the page a few times.  This will give me a better feel for how a lot of text at this size would look in an article.
+
+    This is a code block in the middle of two paragraphs.
+    Let's see if it maintains the line break in the middle.
+
+There is some `code` in here too. I want to style it up nice and purty as well!  I want to see multiple lines of text with `some code` in all of them to see how the line-spacing of the paragraph turns out - I hope I can make it look exactly as I wish!
+
+{% endfilter %}

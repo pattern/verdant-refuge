@@ -1,0 +1,6 @@
+extends: blog.j2
+default_block: entry
+charset: utf-8
+compatibility: IE=edge,chrome=1
+viewport: width=device-width
+listable: true

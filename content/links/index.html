@@ -1,0 +1,22 @@
+---
+title: This is a test.
+date: July 20, 2012
+---
+
+{% filter markdown %}
+
+# Resources
+
+Instead of using a service such a [Delicious][], I decided to curate a list on my own website.  This provides several advantages:
+
+- I can control the look and feel of my content 100%
+- I can add comments and analysis to each entry as I see fit
+
+[Delicious]: http://delicious.com/ "Delicious Personal Content Aggregator"
+
+{% include "/links/git.html" %}
+{% include "/links/database.html" %}
+{% include "/links/design.html" %}
+{% include "/links/javascript.html" %}
+
+{% endfilter %}
