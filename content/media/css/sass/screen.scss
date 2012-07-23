@@ -4,53 +4,57 @@
   background: lighten($blue-selection, 10%);
 }
 
-
-
 body {
+  min-width: $total-width;
   border-top: .5em solid $green;
-  font-family: 'HelveticaNeue', Arial, sans-serif;
+  font-family: $helvetica-neue;
   font-weight: 300;
   color: #333;
 }
 
 h1 {
-  font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+  font-family: $helvetica-neue-bold;
   font-size: 2em;
-  font-weight: 500;
-  margin-bottom: $margin-bottom;
-}
-
-/*
-h1.byline {
-  margin-bottom: 0;
-}
-*/
-
-h2 {
-  font-size: 1.3em;
   font-weight: 500;
   margin-bottom: $margin-bottom/2;
 }
 
+h1.byline {
+  margin-bottom: $margin-bottom/1.25;
+  a {
+    color: #333;
+    text-decoration: none;
+    border-bottom-width: 0;
+  }
+}
+
+h2 {
+  font-family: $helvetica-neue-condensed-bold;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin: $margin-bottom 0 $margin-bottom/2 0;
+}
+
 p {
+  font-family: $palatino;
   font-size: 1.125em;
   margin-bottom: $margin-bottom;
   line-height: 1.75em;
 }
 
-p.byline {
-  font-family: 'HelveticaNeue-Bold';
+p.byline, span.byline {
+  @include legibility;
+  font-family: $helvetica-neue-bold;
+  letter-spacing: .15em;
   text-transform: uppercase;
   font-size: .75em;
-  color: #aaa;
+  color: #999;
+  margin-bottom: $margin-bottom/4;
 }
 
 p.blurb {
-  font-size: 1.25em;
   font-style: italic;
-  font-family: 'Palatino-Italic';
-  line-height: 2em;
-  color: #555;
+  color: #777;
 }
 
 button {
@@ -59,29 +63,37 @@ button {
 }
 
 code {
-  background: #e0e0e0;
-  font-family: Monaco, Courier, "Courier New", monospace;
+  background: #f7f7f7;
+  font-family: $monaco;
   font-size: .875em;
   padding: 2px;
-  color: darken($green, 25%);
+  // color: darken($green, 25%);
 }
 
-pre {
+div.codehilite pre, pre {
+  // @include force-wrap;
+  overflow-x: auto;
   display: block;
-  background: #e0e0e0;
+  font-family: $monaco;
+  margin: 0 1.5em $margin-bottom 1.5em;
+  border: 1px solid #ccc;
+  border-left-width: 8px;
+  background: #f7f7f7;
   line-height: 1.75em;
-  margin-bottom: $margin-bottom;
-  padding: 5px;
+  padding: 10px;
   code {
     color: #444;
+    font-size: 1em;
   }
 }
 
 blockquote {
   background: lighten($green, 50%);
   padding: 10px;
-  border-left: 5px solid lighten($green, 30%);
-  margin-bottom: $margin-bottom;
+  font-family: 'HelveticaNeue-LightItalic';
+  margin: 0 1.5em $margin-bottom 1.5em;
+  border: 1px solid lighten($green, 20%);
+  border-left-width: 8px;
 }
 
 blockquote p:last-child {
@@ -90,8 +102,9 @@ blockquote p:last-child {
 
 blockquote span {
   display: block;
+  font-family: 'HelveticaNeue';
   text-align: right;
-  font-family: 'HelveticaNeue-LightItalic';
+  margin-right: 8px;
   color: #555;
 }
 
@@ -106,8 +119,22 @@ a:hover, a:active {
   border-bottom: 1px solid #bbb;
 }
 
+strong {
+  font-weight: 600;
+}
+
+ul {
+  margin-bottom: $margin-bottom;
+  margin-left: $margin-bottom;
+  li {
+    font-size: 1.125em;
+    line-height: 1.75em;
+  }
+}
+
 ul.tags {
   @include pie-clearfix;
+  margin-bottom: 0;
   li {
     display: inline;
     float: left;
@@ -115,7 +142,9 @@ ul.tags {
   }
 }
 
+
 header {
+  min-width: $total-width;
   background-color: lighten($green, 50%);
   #header_inner {
     @include centered-base;
@@ -144,7 +173,7 @@ header {
 
 #main {
   @include centered-base;
-  padding: 0em 2em;
+  padding: 0em $gutter-width;
 }
 
 footer {

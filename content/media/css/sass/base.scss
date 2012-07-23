@@ -2,8 +2,19 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "compass/utilities";
+@import "compass/typography/text/force-wrap";
+
 @import "fancy-buttons";
 
+/* Font Stacks */
+$helvetica-neue: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$helvetica-neue-bold: 'HelveticaNeue-Bold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$helvetica-neue-condensed-bold: "HelveticaNeue-CondensedBold", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+$helvetica-neue-condensed-black: "HelveticaNeue-CondensedBlack", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+$palatino: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+$monaco: Monaco, Courier, "Courier New", monospace;
+
+/* Colors */
 $green: #31b66a;
 $light-green: #66e89e;
 $grey: #aaa;
@@ -11,11 +22,20 @@ $blue-selection: #aedbe8;
 
 $margin-bottom: 1.25em;
 
+$content-width: 43.75em;
+$gutter-width: 2em;
+$total-width: $content-width + 2*$gutter-width;
+
 @mixin centered-base {
-  width: 43.75em;
+  width: $content-width;
   margin: 0px auto;
 }
 
+@mixin legibility {
+  text-rendering: optimizeLegibility;
+}
+
+/* Classes */
 .bold {
   font-weight: 600;
 }

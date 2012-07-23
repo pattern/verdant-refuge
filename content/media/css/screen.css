@@ -87,7 +87,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   outline: none;
 }
 
-/* line 19, sass/base.scss */
+/* Font Stacks */
+/* Colors */
+/* Classes */
+/* line 39, sass/base.scss */
 .bold {
   font-weight: 600;
 }
@@ -97,59 +100,68 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: #d6edf3;
 }
 
-/* line 9, sass/screen.scss */
+/* line 7, sass/screen.scss */
 body {
+  min-width: 47.75em;
   border-top: 0.5em solid #31b66a;
-  font-family: 'HelveticaNeue', Arial, sans-serif;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #333;
 }
 
-/* line 16, sass/screen.scss */
+/* line 15, sass/screen.scss */
 h1 {
-  font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeue-Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2em;
-  font-weight: 500;
-  margin-bottom: 1.25em;
-}
-
-/*
-h1.byline {
-  margin-bottom: 0;
-}
-*/
-/* line 29, sass/screen.scss */
-h2 {
-  font-size: 1.3em;
   font-weight: 500;
   margin-bottom: 0.625em;
 }
 
-/* line 35, sass/screen.scss */
+/* line 22, sass/screen.scss */
+h1.byline {
+  margin-bottom: 1em;
+}
+/* line 24, sass/screen.scss */
+h1.byline a {
+  color: #333;
+  text-decoration: none;
+  border-bottom-width: 0;
+}
+
+/* line 31, sass/screen.scss */
+h2 {
+  font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin: 1.25em 0 0.625em 0;
+}
+
+/* line 38, sass/screen.scss */
 p {
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 1.125em;
   margin-bottom: 1.25em;
   line-height: 1.75em;
 }
 
-/* line 41, sass/screen.scss */
-p.byline {
-  font-family: 'HelveticaNeue-Bold';
+/* line 45, sass/screen.scss */
+p.byline, span.byline {
+  text-rendering: optimizeLegibility;
+  font-family: "HelveticaNeue-Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: .15em;
   text-transform: uppercase;
   font-size: .75em;
-  color: #aaa;
+  color: #999;
+  margin-bottom: 0.313em;
 }
 
-/* line 48, sass/screen.scss */
+/* line 55, sass/screen.scss */
 p.blurb {
-  font-size: 1.25em;
   font-style: italic;
-  font-family: 'Palatino-Italic';
-  line-height: 2em;
-  color: #555;
+  color: #777;
 }
 
-/* line 56, sass/screen.scss */
+/* line 60, sass/screen.scss */
 button {
   -webkit-border-radius: 0.8em;
   -moz-border-radius: 0.8em;
@@ -217,65 +229,89 @@ button:active, button:active:visited {
   color: #222222;
 }
 
-/* line 61, sass/screen.scss */
+/* line 65, sass/screen.scss */
 code {
-  background: #e0e0e0;
+  background: #f7f7f7;
   font-family: Monaco, Courier, "Courier New", monospace;
   font-size: .875em;
   padding: 2px;
-  color: #16522f;
 }
 
-/* line 69, sass/screen.scss */
-pre {
+/* line 73, sass/screen.scss */
+div.codehilite pre, pre {
+  overflow-x: auto;
   display: block;
-  background: #e0e0e0;
+  font-family: Monaco, Courier, "Courier New", monospace;
+  margin: 0 1.5em 1.25em 1.5em;
+  border: 1px solid #ccc;
+  border-left-width: 8px;
+  background: #f7f7f7;
   line-height: 1.75em;
-  margin-bottom: 1.25em;
-  padding: 5px;
+  padding: 10px;
 }
-/* line 75, sass/screen.scss */
-pre code {
+/* line 84, sass/screen.scss */
+div.codehilite pre code, pre code {
   color: #444;
+  font-size: 1em;
 }
 
-/* line 80, sass/screen.scss */
+/* line 90, sass/screen.scss */
 blockquote {
   background: #ecfaf2;
   padding: 10px;
-  border-left: 5px solid #9ce4bb;
-  margin-bottom: 1.25em;
+  font-family: 'HelveticaNeue-LightItalic';
+  margin: 0 1.5em 1.25em 1.5em;
+  border: 1px solid #74d99f;
+  border-left-width: 8px;
 }
 
-/* line 87, sass/screen.scss */
+/* line 99, sass/screen.scss */
 blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* line 91, sass/screen.scss */
+/* line 103, sass/screen.scss */
 blockquote span {
   display: block;
+  font-family: 'HelveticaNeue';
   text-align: right;
-  font-family: 'HelveticaNeue-LightItalic';
+  margin-right: 8px;
   color: #555;
 }
 
-/* line 98, sass/screen.scss */
+/* line 111, sass/screen.scss */
 a, a:visited {
   color: #31b66a;
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
 }
 
-/* line 104, sass/screen.scss */
+/* line 117, sass/screen.scss */
 a:hover, a:active {
   color: #1b663b;
   border-bottom: 1px solid #bbb;
 }
 
-/* line 109, sass/screen.scss */
+/* line 122, sass/screen.scss */
+strong {
+  font-weight: 600;
+}
+
+/* line 126, sass/screen.scss */
+ul {
+  margin-bottom: 1.25em;
+  margin-left: 1.25em;
+}
+/* line 129, sass/screen.scss */
+ul li {
+  font-size: 1.125em;
+  line-height: 1.75em;
+}
+
+/* line 135, sass/screen.scss */
 ul.tags {
   *zoom: 1;
+  margin-bottom: 0;
 }
 /* line 38, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 ul.tags:after {
@@ -283,56 +319,57 @@ ul.tags:after {
   display: table;
   clear: both;
 }
-/* line 111, sass/screen.scss */
+/* line 138, sass/screen.scss */
 ul.tags li {
   display: inline;
   float: left;
   margin-right: 1em;
 }
 
-/* line 118, sass/screen.scss */
+/* line 146, sass/screen.scss */
 header {
+  min-width: 47.75em;
   background-color: #ecfaf2;
 }
-/* line 120, sass/screen.scss */
+/* line 149, sass/screen.scss */
 header #header_inner {
   width: 43.75em;
   margin: 0px auto;
   padding: 2em;
   margin-bottom: 2.5em;
 }
-/* line 124, sass/screen.scss */
+/* line 153, sass/screen.scss */
 header #header_inner h1 {
   font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   margin-bottom: .5em;
 }
-/* line 128, sass/screen.scss */
+/* line 157, sass/screen.scss */
 header #header_inner h1 a {
   border-bottom: none;
 }
-/* line 131, sass/screen.scss */
+/* line 160, sass/screen.scss */
 header #header_inner h1 span {
   color: #aaaaaa;
 }
-/* line 134, sass/screen.scss */
+/* line 163, sass/screen.scss */
 header #header_inner h1 span:first-child {
   color: #31b66a;
   font-weight: bold;
 }
-/* line 139, sass/screen.scss */
+/* line 168, sass/screen.scss */
 header #header_inner p {
   margin: 0;
 }
 
-/* line 145, sass/screen.scss */
+/* line 174, sass/screen.scss */
 #main {
   width: 43.75em;
   margin: 0px auto;
   padding: 0em 2em;
 }
 
-/* line 150, sass/screen.scss */
+/* line 179, sass/screen.scss */
 footer {
   width: 43.75em;
   margin: 0px auto;

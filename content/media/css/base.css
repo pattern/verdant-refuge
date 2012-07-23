@@ -87,7 +87,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   outline: none;
 }
 
-/* line 19, sass/base.scss */
+/* Font Stacks */
+/* Colors */
+/* Classes */
+/* line 39, sass/base.scss */
 .bold {
   font-weight: 600;
 }
