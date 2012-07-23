@@ -1,0 +1,56 @@
+{% extends "base.j2" %}
+
+{% block scripts %}
+  $(function() {
+    var date = new Date("{{ resource.meta.date }}");
+    var timeago = $.timeago(date);
+    $('.timeago').html(timeago);
+  });
+{% endblock scripts %}
+
+{% block content %}
+
+
+<p class="byline">Posted {{ resource.meta.date }}, <span class="timeago"></span>.  Tagged: <span style="text-transform: none;"><a href="#">python</a>, <a href="#">web-development</a>, <a href="#">wsgi</a></span>.</p>
+
+
+<h1 class="byline">
+  <a href="{{ resource.full_url }}">{{ resource.meta.title }}</a>
+  <!--<span class="byline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}</span>-->
+</h1>
+<!--<p class="byline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}.</p>-->
+
+{% filter markdown -%}
+{% block entry %}
+Entry block here.
+{% endblock entry %}
+{%- endfilter %}
+
+<ul class="tags">
+{% for tag in resource.meta.tags -%}
+  <li><button>{{ tag }}</button></li>
+{%- endfor %}
+</ul>
+
+{% endblock content %}
+
+
+
+
+<h1>Tags:</h1>
+{# You can grab the list of all tags ... #}
+{% for tag, meta in site.tagger.tags %}
+  <h3>*{{ tag }}* ({{ meta }})</h3>
+
+{# ... and get all resurces tagged with that node. #}
+{% for res in resource.node.walk_resources_tagged_with(tag) %}
+  * [{{ res.slug|capitalize|replace("-"," ") }}]({{ res.full_url }}) \
+    ({{ res.name }})
+{% endfor %}
+  <br />
+{% endfor %}
+
+
+
+
+
