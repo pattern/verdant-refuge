@@ -7,15 +7,11 @@ plugins:
   - hyde.ext.plugins.auto_extend.AutoExtendPlugin
   - hyde.ext.plugins.urls.UrlCleanerPlugin
   - hyde.ext.plugins.tagger.TaggerPlugin
-# context:
-#     data:
-#         menu:
-#             -
-#                 name: Home
-#                 description: Home Page
-#                 css_class: home
-#                 type: page
-#                 url: index.html
+context:
+  data:
+    author: Jeff Pickelman
+    description: Verdant Refuge - Jeff Pickelman's personal website.
+    version: 0.1
 urlcleaner:
   index_file_names:
     # Identifies the files that represents a directory listing.
@@ -32,6 +28,12 @@ publisher:
   s3:
     type: hyde.ext.publishers.pyfs.PyFS
     url: s3://www.verdantrefuge.com
+markdown:
+  extensions:
+    - codehilite
+    - extra
+    # - toc
+  output_format: html
 meta:
   nodemeta: meta.yaml
   created: June 21, 2012
