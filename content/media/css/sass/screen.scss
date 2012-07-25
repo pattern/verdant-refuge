@@ -5,6 +5,7 @@
 }
 
 body {
+  @include single-transition(all, .2s, ease-in-out);
   min-width: $total-width;
   border-top: .5em solid $green;
   font-family: $helvetica-neue;
@@ -64,6 +65,7 @@ button {
 
 code {
   background: #f7f7f7;
+  border: 1px solid #c8c8c8;
   font-family: $monaco;
   font-size: .875em;
   padding: 2px;
@@ -76,9 +78,9 @@ div.codehilite pre, pre {
   display: block;
   font-family: $monaco;
   margin: 0 1.5em $margin-bottom 1.5em;
-  border: 1px solid #ccc;
-  border-left-width: 8px;
   background: #f7f7f7;
+  border: 1px solid #c8c8c8;
+  border-left-width: 8px;
   line-height: 1.75em;
   padding: 10px;
   code {
@@ -167,6 +169,41 @@ header {
     }
     p {
       margin: 0;
+    }
+  }
+}
+
+#header_inner_2 {
+  @include pie-clearfix;
+}
+
+#title {
+  @include float-left;
+  width: $content-width/2;
+  margin-right: $gutter-width;
+}
+
+#nav {
+  @include float-left;
+  width: $content-width/2 - $gutter-width;
+  ul.nav {
+    @include pie-clearfix;
+    margin: .5em 0 0 0;
+    li {
+      display: inline;
+      float: left;
+      width: 6em;
+      margin-bottom: 1em;
+      a {
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+        background: lighten($green, 40%);
+        border-bottom-width: 0px;
+      }
+    }
+    li:nth-child(2n+1) {
+      margin-right: 2em;
     }
   }
 }

@@ -35,6 +35,11 @@ $total-width: $content-width + 2*$gutter-width;
   text-rendering: optimizeLegibility;
 }
 
+@mixin float-left {
+  display: inline;
+  float: left;
+}
+
 /* Classes */
 .bold {
   font-weight: 600;

@@ -1,0 +1,7 @@
+@media only screen and (max-width: 768px) {
+  /* line 3, sass/media-queries.scss */
+  #nav {
+    display: block;
+    width: 100%;
+  }
+}
