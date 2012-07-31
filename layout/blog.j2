@@ -11,7 +11,14 @@
 {% block content %}
 
 
-<p class="byline">Posted {{ resource.meta.date }}, <span class="timeago"></span>.  Tagged: <span style="text-transform: none;"><a href="#">python</a>, <a href="#">web-development</a>, <a href="#">wsgi</a></span>.</p>
+<p class="byline">
+  {{ resource.meta.date }},
+  <span class="timeago"></span>.
+  &nbsp;&nbsp;&nbsp;
+  {% for tag in resource.meta.tags -%}
+    <a href="#">{{ tag }}</a>{% if loop.last %}.{% else %},{% endif %}
+  {% endfor %}
+</p>
 
 
 <h1 class="byline">
@@ -26,15 +33,15 @@ Entry block here.
 {% endblock entry %}
 {%- endfilter %}
 
+{% endblock content %}
+
+
+
 <ul class="tags">
 {% for tag in resource.meta.tags -%}
   <li><button>{{ tag }}</button></li>
 {%- endfor %}
 </ul>
-
-{% endblock content %}
-
-
 
 
 <h1>Tags:</h1>
