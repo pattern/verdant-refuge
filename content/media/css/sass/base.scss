@@ -40,7 +40,41 @@ $total-width: $content-width + 2*$gutter-width;
   float: left;
 }
 
+.image-left {
+  float: left;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.image-right {
+  float: right;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+
 /* Classes */
-.bold {
+b, .bold {
   font-weight: 600;
 }
+
+.list-with-information {
+  ul {
+    margin-bottom: $margin-bottom*2;
+    li {
+      // No margin on the first child
+      p:first-child {
+        margin-bottom: 0;
+      }
+      // All but the first should be indented
+      p:not(:first-child) {
+        margin-left: 2em;
+      }
+      // All intermediary paragraphs should have a small margin
+      p:not(:first-child):not(:last-child) {
+        margin-bottom: $margin-bottom/2;
+      }
+    }
+  }
+}
+

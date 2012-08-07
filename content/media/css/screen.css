@@ -89,10 +89,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Font Stacks */
 /* Colors */
+/* line 43, sass/base.scss */
+.image-left {
+  float: left;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 49, sass/base.scss */
+.image-right {
+  float: right;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
 /* Classes */
-/* line 44, sass/base.scss */
-.bold {
+/* line 57, sass/base.scss */
+b, .bold {
   font-weight: 600;
+}
+
+/* line 62, sass/base.scss */
+.list-with-information ul {
+  margin-bottom: 2.5em;
+}
+/* line 66, sass/base.scss */
+.list-with-information ul li p:first-child {
+  margin-bottom: 0;
+}
+/* line 70, sass/base.scss */
+.list-with-information ul li p:not(:first-child) {
+  margin-left: 2em;
+}
+/* line 74, sass/base.scss */
+.list-with-information ul li p:not(:first-child):not(:last-child) {
+  margin-bottom: 0.625em;
 }
 
 /* line 3, sass/screen.scss */
@@ -101,12 +132,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 7, sass/screen.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 11, sass/screen.scss */
 body {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
   min-width: 47.75em;
   border-top: 0.5em solid #31b66a;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -114,7 +150,7 @@ body {
   color: #333;
 }
 
-/* line 16, sass/screen.scss */
+/* line 20, sass/screen.scss */
 h1 {
   font-family: "HelveticaNeue-Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2em;
@@ -122,35 +158,29 @@ h1 {
   margin-bottom: 0.625em;
 }
 
-/* line 23, sass/screen.scss */
-h1.byline {
-  margin-bottom: 1em;
-}
-/* line 25, sass/screen.scss */
-h1.byline a {
-  color: #333;
-  text-decoration: none;
-  border-bottom-width: 0;
+/* line 27, sass/screen.scss */
+h1.title {
+  margin-bottom: 0.313em;
 }
 
-/* line 32, sass/screen.scss */
+/* line 31, sass/screen.scss */
 h2 {
   font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
   font-size: 1.3em;
   font-weight: 500;
-  margin: 1.25em 0 0.625em 0;
+  margin: 1.563em 0 0.625em 0;
 }
 
-/* line 39, sass/screen.scss */
+/* line 38, sass/screen.scss */
 p {
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 1.125em;
-  margin-bottom: 1.25em;
   line-height: 1.75em;
+  margin-bottom: 1.25em;
 }
 
-/* line 46, sass/screen.scss */
-p.byline, span.byline {
+/* line 45, sass/screen.scss */
+p.dateline, span.dateline {
   text-rendering: optimizeLegibility;
   font-family: "HelveticaNeue-Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: .15em;
@@ -159,14 +189,19 @@ p.byline, span.byline {
   color: #999;
   margin-bottom: 0.313em;
 }
-
-/* line 56, sass/screen.scss */
-p.blurb {
-  font-style: italic;
-  color: #777;
+/* line 53, sass/screen.scss */
+p.dateline a, span.dateline a {
+  text-transform: none;
 }
 
-/* line 61, sass/screen.scss */
+/* line 58, sass/screen.scss */
+p.tagline {
+  color: #555;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+/* line 64, sass/screen.scss */
 button {
   -webkit-border-radius: 0.8em;
   -moz-border-radius: 0.8em;
@@ -234,7 +269,7 @@ button:active, button:active:visited {
   color: #222222;
 }
 
-/* line 66, sass/screen.scss */
+/* line 69, sass/screen.scss */
 code {
   background: #f7f7f7;
   border: 1px solid #c8c8c8;
@@ -243,7 +278,7 @@ code {
   padding: 2px;
 }
 
-/* line 75, sass/screen.scss */
+/* line 78, sass/screen.scss */
 div.codehilite pre, pre {
   overflow-x: auto;
   display: block;
@@ -255,13 +290,13 @@ div.codehilite pre, pre {
   line-height: 1.75em;
   padding: 10px;
 }
-/* line 86, sass/screen.scss */
+/* line 89, sass/screen.scss */
 div.codehilite pre code, pre code {
   color: #444;
   font-size: 1em;
 }
 
-/* line 92, sass/screen.scss */
+/* line 95, sass/screen.scss */
 blockquote {
   background: #ecfaf2;
   padding: 10px;
@@ -271,12 +306,12 @@ blockquote {
   border-left-width: 8px;
 }
 
-/* line 101, sass/screen.scss */
+/* line 104, sass/screen.scss */
 blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* line 105, sass/screen.scss */
+/* line 108, sass/screen.scss */
 blockquote span {
   display: block;
   font-family: 'HelveticaNeue';
@@ -285,36 +320,55 @@ blockquote span {
   color: #555;
 }
 
-/* line 113, sass/screen.scss */
+/* line 116, sass/screen.scss */
 a, a:visited {
   color: #31b66a;
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
 }
 
-/* line 119, sass/screen.scss */
+/* line 122, sass/screen.scss */
 a:hover, a:active {
-  color: #1b663b;
+  color: #217a47;
   border-bottom: 1px solid #bbb;
 }
 
-/* line 124, sass/screen.scss */
+/* line 129, sass/screen.scss */
+h1.title a, h1.title a:visited, h1.title a:hover, h1.title a:active, h1 a, h1 a:visited, h1 a:hover, h1 a:active, h2 a, h2 a:visited, h2 a:hover, h2 a:active, h3 a, h3 a:visited, h3 a:hover, h3 a:active, h4 a, h4 a:visited, h4 a:hover, h4 a:active {
+  color: #333;
+  text-decoration: none;
+  border-bottom-width: 0;
+}
+
+/* line 136, sass/screen.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 128, sass/screen.scss */
+/* line 140, sass/screen.scss */
 ul {
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
-/* line 131, sass/screen.scss */
+/* line 143, sass/screen.scss */
 ul li {
+  background: url("/media/images/green-bullet.png") no-repeat 2px 12px;
+  padding-left: 14px;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 1.125em;
   line-height: 1.75em;
 }
+/* line 149, sass/screen.scss */
+ul li p {
+  font-size: 100%;
+  line-height: 1.75em;
+}
+/* line 156, sass/screen.scss */
+ul li ul li {
+  font-size: 100%;
+}
 
-/* line 137, sass/screen.scss */
+/* line 164, sass/screen.scss */
 ul.tags {
   *zoom: 1;
   margin-bottom: 0;
@@ -325,50 +379,51 @@ ul.tags:after {
   display: table;
   clear: both;
 }
-/* line 140, sass/screen.scss */
+/* line 167, sass/screen.scss */
 ul.tags li {
   display: inline;
   float: left;
   margin-right: 1em;
 }
 
-/* line 148, sass/screen.scss */
+/* line 175, sass/screen.scss */
 header {
   min-width: 47.75em;
   background-color: #ecfaf2;
 }
-/* line 151, sass/screen.scss */
+/* line 178, sass/screen.scss */
 header #header_inner {
   width: 43.75em;
   margin: 0px auto;
   padding: 2em;
   margin-bottom: 2.5em;
 }
-/* line 155, sass/screen.scss */
+/* line 182, sass/screen.scss */
 header #header_inner h1 {
+  /* text-shadow: 0px 2px 0px #fff; */
   font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   margin-bottom: .5em;
 }
-/* line 159, sass/screen.scss */
+/* line 187, sass/screen.scss */
 header #header_inner h1 a {
   border-bottom: none;
 }
-/* line 162, sass/screen.scss */
+/* line 190, sass/screen.scss */
 header #header_inner h1 span {
   color: #aaaaaa;
 }
-/* line 165, sass/screen.scss */
+/* line 193, sass/screen.scss */
 header #header_inner h1 span:first-child {
   color: #31b66a;
   font-weight: bold;
 }
-/* line 170, sass/screen.scss */
+/* line 198, sass/screen.scss */
 header #header_inner p {
   margin: 0;
 }
 
-/* line 176, sass/screen.scss */
+/* line 204, sass/screen.scss */
 #header_inner_2 {
   *zoom: 1;
 }
@@ -379,24 +434,38 @@ header #header_inner p {
   clear: both;
 }
 
-/* line 180, sass/screen.scss */
+/* line 208, sass/screen.scss */
 #title {
   display: inline;
   float: left;
   width: 21.875em;
-  margin-right: 2em;
+  margin-right: 4em;
+}
+/* line 212, sass/screen.scss */
+#title div {
+  display: inline;
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+/* line 218, sass/screen.scss */
+#title img {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #aaa;
 }
 
-/* line 186, sass/screen.scss */
+/* line 225, sass/screen.scss */
 #nav {
   display: inline;
   float: left;
-  width: 19.875em;
+  width: 17.875em;
 }
-/* line 189, sass/screen.scss */
+/* line 228, sass/screen.scss */
 #nav ul.nav {
   *zoom: 1;
-  margin: .5em 0 0 0;
+  margin: .7em 0 0 0;
 }
 /* line 38, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 #nav ul.nav:after {
@@ -404,34 +473,45 @@ header #header_inner p {
   display: table;
   clear: both;
 }
-/* line 192, sass/screen.scss */
+/* line 231, sass/screen.scss */
 #nav ul.nav li {
+  background: none;
+  padding-left: 0;
   display: inline;
   float: left;
   width: 6em;
   margin-bottom: 1em;
 }
-/* line 197, sass/screen.scss */
+/* line 238, sass/screen.scss */
 #nav ul.nav li a {
   display: block;
   text-align: center;
-  padding: 5px 0;
+  padding: 7px 0 5px 0;
   background: #c4efd6;
   border-bottom-width: 0px;
 }
-/* line 205, sass/screen.scss */
+/* line 245, sass/screen.scss */
+#nav ul.nav li a:hover {
+  background: #a8e8c3;
+}
+/* line 248, sass/screen.scss */
+#nav ul.nav li a:active {
+  position: relative;
+  top: 1px;
+}
+/* line 253, sass/screen.scss */
 #nav ul.nav li:nth-child(2n+1) {
   margin-right: 2em;
 }
 
-/* line 211, sass/screen.scss */
+/* line 259, sass/screen.scss */
 #main {
   width: 43.75em;
   margin: 0px auto;
   padding: 0em 2em;
 }
 
-/* line 216, sass/screen.scss */
+/* line 264, sass/screen.scss */
 footer {
   width: 43.75em;
   margin: 0px auto;

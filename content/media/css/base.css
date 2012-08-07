@@ -89,8 +89,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Font Stacks */
 /* Colors */
+/* line 43, sass/base.scss */
+.image-left {
+  float: left;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 49, sass/base.scss */
+.image-right {
+  float: right;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
 /* Classes */
-/* line 44, sass/base.scss */
-.bold {
+/* line 57, sass/base.scss */
+b, .bold {
   font-weight: 600;
+}
+
+/* line 62, sass/base.scss */
+.list-with-information ul {
+  margin-bottom: 2.5em;
+}
+/* line 66, sass/base.scss */
+.list-with-information ul li p:first-child {
+  margin-bottom: 0;
+}
+/* line 70, sass/base.scss */
+.list-with-information ul li p:not(:first-child) {
+  margin-left: 2em;
+}
+/* line 74, sass/base.scss */
+.list-with-information ul li p:not(:first-child):not(:last-child) {
+  margin-bottom: 0.625em;
 }
