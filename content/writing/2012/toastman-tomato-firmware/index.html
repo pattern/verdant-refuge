@@ -1,0 +1,109 @@
+---
+title: Toastman Tomato Firmware
+tagline: Installing open source firmware on a <b>Linksys WRT54GL</b> and a <b>Belkin Share Max N300+</b>, linking them together with WDS, and experiencing the bliss that is QoS!
+date: July 16, 2012
+tags:
+  - hardware
+  - router
+  - tomato
+draft: true
+---
+
+## Motivation
+
+I recently moved into a new house that I share with 3 other people.  As a web developer and general internet enthusiast, I needed a way to make sure a couple of people simultaneously streaming Netflix and Hulu plus some Pandora and stray downloading thrown in would not diminish my ability to <s>constantly refresh Hacker News</s> Get Things Done&trade;.
+
+I stumbled upon the concept of [Quality of Service][qos-wikipedia] (QoS) while reading Jeff Atwood's eye-opening post on the wonders of [open source firmware on commodity hardware][coding-horror-1].  QoS allows you to apply classification rules to all traffic through you router, and limit the incoming or outgoing bandwidth available to each type of traffic.
+
+[qos-wikipedia]: http://en.wikipedia.org/wiki/Quality_of_service "Wikipedia: Quality of Service"
+[coding-horror-1]: http://www.codinghorror.com/blog/2012/06/because-everyone-still-needs-a-router.html "Because Everyone (Still) Needs a Router"
+
+## Research
+
+I decided I take the dive and started researching the different firmware options: [DD-WRT][dd-wrt], [OpenWrt][openwrt], and [Tomato][tomato-wikipedia].
+
+[dd-wrt]: http://www.dd-wrt.com/site/index "DD-WRT Linux-Based Open Source Firmware"
+[openwrt]: https://openwrt.org/ "OpenWrt Linux-based Firmware"
+[tomato-wikipedia]: http://en.wikipedia.org/wiki/Tomato_(firmware) "Wikipedia: Tomato Firmware"
+
+**DD-WRT** appears to be a one-size-fits-all package with a large forum presence and a broad range of supported hardware.  It appears to be one of the oldest firmwares available, and as such there is a wealth of documentation/tutorials/forum-postings - albeit sometimes outdated.
+
+**OpenWrt** takes a more Unix-y approach in that it aims to provide a smorgasbord of packages.  The user can pick and choose which functionality they need and build a custom firmware to their specifications.  This approach appeals to me, but alas, I needed a quick solution.  In the future I may revisit OpenWrt and see how the package management works in practice.
+
+**Tomato** proper was last updated in June of 2010, but there is an active community with roughly ten individuals maintaining their own branches, and making releases with different subsets of features available.  Check out the [feature comparison table][tomato-features-wikipedia].  I zeroed in on the "Toastman" version of Tomato mainly because there was a [wealth of information][toastman-links] listed on Toastman's website.
+
+[tomato-features-wikipedia]: http://en.wikipedia.org/wiki/Tomato_(firmware)#Feature_comparison "Wikipedia: Tomato Feature Comparison"
+[toastman-links]: http://toastmanfirmware.yolasite.com/common-tomato-topics.php "Toastman Tomato - List of Common Tomato Topics"
+
+## Hardware &amp; Installation
+
+<div style="background: #f00; height: 200px; width: 300px;">
+  Hi!
+</div>
+
+![Linksys WRT54GL Router]({{ resource.full_url }}wrt54gl.jpeg){: .image-right }
+A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CPU, 16MB RAM, 4MB Flash) willingly gave itself to the cause of being a Tomato guinea pig.  I read a good amount of the links on Toastman's website, as well as some background information on the DD-WRT site (including the all-important [30/30/30 rule][30-30-30], which is to be performed before and after every flash of the NVRAM).  Upgrading from the stock firmware to Tomato went without a hitch.  I spent a good couple of hours poking around and exploring all the options available.
+
+I also picked up a Belkin Share Max N300 router
+
+[wrt54gl-wikipedia]: http://en.wikipedia.org/wiki/Linksys_WRT54G_series#WRT54GL "Wikipedia: Linksys WRT54GL"
+[30-30-30]: http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30 "Router Hard Reset, or 30/30/30 Rule"
+
+A small sample of the wonders within:
+
+-   First
+
+
+
+
+
+
+
+## Goals
+
+- Understand routing and networking at a deeper level.
+    - VPN (PPTP vs OpenVPN)
+    - VLANs
+    - Quality of Service
+    - Subnet masks
+    
+
+
+
+
+- Monitor monthly bandwidth usage to be aware of how close to cap
+- General nerdery (who doens't want to brag about overclocking their ROUTER?)
+
+## Research
+
+- The whole quest was spurred on by a post by Jeff Atwood of Coding Horror about [combining commodity hardware with open-source firmware][jeff-atwood-1].
+
+[jeff-atwood-1]: http://www.codinghorror.com/blog/2012/06/because-everyone-still-needs-a-router.html "Because Everyone (Still) Needs a Router (6/18/2012)"
+
+
+
+## Further Functionality
+
+- [Setup Usenet client with Optware](http://www.linksysinfo.org/index.php?threads/setup-usenet-client-with-optware.37963/)
+- [How to set up Nas, Optware, etc, FOR TOTAL NOOBS](http://tomatousb.org/tut:how-to-set-up-nas-optware-etc-for-total-noobs)
+
+
+
+
+- Classification allows for better idea of what traffic is being handled
+- Real-time bandwidth analysis, by IP address
+
+
+
+
+
+The story is here: [The Open Source WRT54G Story][wrt54g-story].
+
+[wrt54g-story]: http://www.wi-fiplanet.com/tutorials/article.php/3562391 "The Open Source WRT54G Story"
+
+
+
+
+
+
+
