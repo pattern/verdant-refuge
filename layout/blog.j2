@@ -11,7 +11,7 @@
 {% block content %}
 
 
-<p class="byline">
+<p class="dateline">
   {{ resource.meta.date }},
   <span class="timeago"></span>.
   &nbsp;&nbsp;&nbsp;
@@ -21,11 +21,15 @@
 </p>
 
 
-<h1 class="byline">
+<h1 class="title">
   <a href="{{ resource.full_url }}">{{ resource.meta.title }}</a>
-  <!--<span class="byline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}</span>-->
+  <!--<span class="dateline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}</span>-->
 </h1>
-<!--<p class="byline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}.</p>-->
+<!--<p class="dateline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}.</p>-->
+
+{% if resource.meta.tagline -%}
+  <p class="tagline">{{ resource.meta.tagline }}</p>
+{%- endif %}
 
 {% filter markdown -%}
 {% block entry %}
