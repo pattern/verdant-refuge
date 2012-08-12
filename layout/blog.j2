@@ -1,35 +1,11 @@
 {% extends "base.j2" %}
 
-{% block scripts %}
-  $(function() {
-    var date = new Date("{{ resource.meta.date }}");
-    var timeago = $.timeago(date);
-    $('.timeago').html(timeago);
-  });
-{% endblock scripts %}
-
 {% block content %}
 
-
-<p class="dateline">
-  {{ resource.meta.date }},
-  <span class="timeago"></span>.
-  &nbsp;&nbsp;&nbsp;
-  {% for tag in resource.meta.tags -%}
-    <a href="#">{{ tag }}</a>{% if loop.last %}.{% else %},{% endif %}
-  {% endfor %}
-</p>
-
-
-<h1 class="title">
-  <a href="{{ resource.full_url }}">{{ resource.meta.title }}</a>
-  <!--<span class="dateline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}</span>-->
-</h1>
-<!--<p class="dateline">Posted <span class="timeago"></span>, on {{ resource.meta.date }}.</p>-->
-
-{% if resource.meta.tagline -%}
-  <p class="tagline">{{ resource.meta.tagline }}</p>
-{%- endif %}
+{% with %}
+  {% set res = resource %}
+  {% include "blog-header.j2" %}
+{% endwith %}
 
 {% filter markdown -%}
 {% block entry %}
@@ -41,6 +17,7 @@ Entry block here.
 
 
 
+{# Helpful code for getting the hang of tagging:
 <ul class="tags">
 {% for tag in resource.meta.tags -%}
   <li><button>{{ tag }}</button></li>
@@ -49,17 +26,18 @@ Entry block here.
 
 
 <h1>Tags:</h1>
-{# You can grab the list of all tags ... #}
+<!-- You can grab the list of all tags ... -->
 {% for tag, meta in site.tagger.tags %}
   <h3>*{{ tag }}* ({{ meta }})</h3>
 
-{# ... and get all resurces tagged with that node. #}
+<!-- ... and get all resurces tagged with that node. -->
 {% for res in resource.node.walk_resources_tagged_with(tag) %}
   * [{{ res.slug|capitalize|replace("-"," ") }}]({{ res.full_url }}) \
     ({{ res.name }})
 {% endfor %}
   <br />
 {% endfor %}
+#}
 
 
 

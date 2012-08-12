@@ -82,7 +82,9 @@
     </div>
   </header>
   <div id="main" role="main">
+    {% mark content %}
     {% block content %}{% endblock content%}
+    {% endmark %}
   </div>
   <footer>
     <!-- Nothing Yet! -->
@@ -98,6 +100,7 @@
     {% endblock jquery %}
     
     <script src="{{ media_url('js/libs/jquery.timeago.js') }}"></script>
+    <script src="{{ media_url('js/global.js') }}"></script>
     
     <script>
     {% block scripts %}

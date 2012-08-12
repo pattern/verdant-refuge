@@ -1,0 +1,26 @@
+{% if res.meta.date %}
+  <p class="dateline">
+    <time>{{ res.meta.date }}</time>,
+    <span class="timeago" title="{{ res.meta.created }}"></span>.
+    &nbsp;&nbsp;&nbsp;
+    {% for tag in res.meta.tags -%}
+      <a href="/writing/tags/#{{ tag }}">{{ tag }}</a>{% if loop.last %}.{% else %},{% endif %}
+    {% endfor %}
+  </p>
+{% endif %}
+
+<h1 class="title">
+  <a href="{{ res.full_url }}">{{ res.meta.title }}</a>
+  {# This was another possible positioning of the date
+  <span class="dateline">Posted <span class="timeago"></span>,
+  on {{ res.meta.date }}</span>
+  #}
+</h1>
+{# This was yet another possible positioning of the date
+<p class="dateline">Posted <span class="timeago"></span>,
+on {{ res.meta.date }}.</p>
+#}
+
+{% if res.meta.tagline -%}
+  <p class="tagline">{{ res.meta.tagline }}</p>
+{%- endif %}
