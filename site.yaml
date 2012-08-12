@@ -7,6 +7,8 @@ plugins:
   - hyde.ext.plugins.auto_extend.AutoExtendPlugin
   - hyde.ext.plugins.urls.UrlCleanerPlugin
   - hyde.ext.plugins.tagger.TaggerPlugin
+  - hyde.ext.plugins.sorter.SorterPlugin
+  # - hyde.ext.plugins.git.GitDatesPlugin
 context:
   data:
     author: Jeff Pickelman
@@ -24,6 +26,34 @@ urlcleaner:
     #- html
   # This option will append a slash to the end of directory paths
   append_slash: true
+sorter:
+  time:
+    attr:
+      - meta.created
+    reverse: true
+    filters:
+      source.kind: html
+      meta.listable: true
+# sorter:
+#   name: # the name of the sorter (no pun intended)
+#     attr: name # by which attributes will resources be sorted
+#     filters:
+#       source_file.kind: html
+#       # You can include only files from a certain folder.
+#       #resource.node: (name of the folder)
+#     #reverse: True # if you need the list backwards
+#   file_type:
+#     attr:
+#       - source_file.kind
+#       - source_file.size
+#   index:
+#     attr: meta.index
+#     filters:
+#       source_file.kind: html
+#   learning_order:
+#     attr: meta.learning_order
+#     filters:
+#       source_file.kind: html
 publisher:
   s3:
     type: hyde.ext.publishers.pyfs.PyFS
@@ -36,6 +66,6 @@ markdown:
   output_format: html
 meta:
   nodemeta: meta.yaml
-  created: June 21, 2012
+  # created: June 21, 2012
   author: Jeff Pickelman
   ga_tracking_code: XX-XXXXXXXX-X
