@@ -1,0 +1,22 @@
+---
+extends: base.j2
+title: Tags
+default_block: content
+---
+
+{% filter markdown %}
+
+# Tags
+
+{# You can grab the list of all tags ... #}
+{% for tag, meta in site.tagger.tags %}
+## {{ tag }} <a id="{{ tag }}"></a>
+
+{# ... and get all resurces tagged with that node. #}
+{% for res in resource.node.walk_resources_tagged_with(tag) %}
+-   [{{ res.meta.title }}]({{ res.full_url }}) ({{ res.meta.date }})
+{% endfor %}
+
+{% endfor %}
+
+{% endfilter %}
