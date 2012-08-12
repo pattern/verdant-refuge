@@ -2,3 +2,4 @@
 hyde
 boto
 fs
+python-dateutil==2.1
