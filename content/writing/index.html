@@ -1,12 +1,32 @@
 ---
+extends: base.j2
+default_block: content
 title: Writing
 date: July 23, 2012
+listable: false
 ---
 
-{% filter markdown %}
+{% for res in resource.node.walk_resources_sorted_by_time() %}
+  {# above used to be:  resource.node. instead of site.content. #}
+  {% include "blog-header.j2" %}
+  <div style="height: 20px;"></div>
+{% endfor %}
 
-# Writing
 
-Insert chronological listing of my writing here!
 
-{% endfilter %}
+
+{# Original code for listing posts sorted by time:
+
+{% for res in resource.node.walk_resources_sorted_by_time() %}
+{% refer to res.url as post %}
+<article {{'class='~class if class }}>
+<h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
+<a href="{{ content_url(res.url) }}">{{ post.image|markdown }}</a>
+{{ post.excerpt|markdown }}
+<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+</time>
+</article>
+{% endfor %}
+
+#}
