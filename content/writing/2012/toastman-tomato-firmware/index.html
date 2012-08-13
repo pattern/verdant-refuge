@@ -2,11 +2,11 @@
 title: Toastman Tomato Firmware
 tagline: Installing open source firmware on a <b>Linksys WRT54GL</b> and a <b>Belkin Share Max N300+</b>, linking them together with WDS, and experiencing the bliss that is QoS!
 date: July 16, 2012
+created: !!timestamp '2012-7-16 10:00:00 -8:00'
 tags:
   - hardware
   - router
   - tomato
-draft: true
 ---
 
 ## Motivation
@@ -20,7 +20,7 @@ I stumbled upon the concept of [Quality of Service][qos-wikipedia] (QoS) while r
 
 ## Research
 
-I decided I take the dive and started researching the different firmware options: [DD-WRT][dd-wrt], [OpenWrt][openwrt], and [Tomato][tomato-wikipedia].
+I decided I take the dive and started researching the different firmware options.  Three stood out: [DD-WRT][dd-wrt], [OpenWrt][openwrt], and [Tomato][tomato-wikipedia].
 
 [dd-wrt]: http://www.dd-wrt.com/site/index "DD-WRT Linux-Based Open Source Firmware"
 [openwrt]: https://openwrt.org/ "OpenWrt Linux-based Firmware"
@@ -37,17 +37,17 @@ I decided I take the dive and started researching the different firmware options
 
 ## Hardware &amp; Installation
 
-<div style="background: #f00; height: 200px; width: 300px;">
-  Hi!
-</div>
-
-![Linksys WRT54GL Router]({{ resource.full_url }}wrt54gl.jpeg){: .image-right }
+![Linksys WRT54GL Router]({{ resource.full_url }}linksys-wrt54gl.jpeg){: .image-right }
 A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CPU, 16MB RAM, 4MB Flash) willingly gave itself to the cause of being a Tomato guinea pig.  I read a good amount of the links on Toastman's website, as well as some background information on the DD-WRT site (including the all-important [30/30/30 rule][30-30-30], which is to be performed before and after every flash of the NVRAM).  Upgrading from the stock firmware to Tomato went without a hitch.  I spent a good couple of hours poking around and exploring all the options available.
-
-I also picked up a Belkin Share Max N300 router
 
 [wrt54gl-wikipedia]: http://en.wikipedia.org/wiki/Linksys_WRT54G_series#WRT54GL "Wikipedia: Linksys WRT54GL"
 [30-30-30]: http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30 "Router Hard Reset, or 30/30/30 Rule"
+
+![Belkin Share Max N300+ Router]({{ resource.full_url }}belkin-n300.png){: .image-left }
+I also picked up a Belkin Share Max N300+ router.  With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless - this router is a steal for $25 shipped (from [Expansys][expansys]).
+
+[expansys]: http://www.expansys-usa.com/ "Expansys"
+
 
 A small sample of the wonders within:
 
@@ -73,13 +73,6 @@ A small sample of the wonders within:
 
 - Monitor monthly bandwidth usage to be aware of how close to cap
 - General nerdery (who doens't want to brag about overclocking their ROUTER?)
-
-## Research
-
-- The whole quest was spurred on by a post by Jeff Atwood of Coding Horror about [combining commodity hardware with open-source firmware][jeff-atwood-1].
-
-[jeff-atwood-1]: http://www.codinghorror.com/blog/2012/06/because-everyone-still-needs-a-router.html "Because Everyone (Still) Needs a Router (6/18/2012)"
-
 
 
 ## Further Functionality
