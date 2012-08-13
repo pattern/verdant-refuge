@@ -322,14 +322,14 @@ blockquote span {
 
 /* line 116, sass/screen.scss */
 a, a:visited {
-  color: #31b66a;
+  color: #268e53;
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
 }
 
 /* line 122, sass/screen.scss */
 a:hover, a:active {
-  color: #217a47;
+  color: #1f7242;
   border-bottom: 1px solid #bbb;
 }
 

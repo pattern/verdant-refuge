@@ -114,13 +114,13 @@ blockquote span {
 }
 
 a, a:visited {
-  color: $green;
+  color: darken($green, 10%);
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
 }
 
 a:hover, a:active {
-  color: darken($green, 15%);
+  color: darken($green, 17%);
   border-bottom: 1px solid #bbb;
 }
 
