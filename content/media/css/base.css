@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 177, ../../../../../../../Library/Ruby/Gems/1.8/gems/fancy-buttons-1.2.0/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/content/media/images/button_bg.png') repeat-x bottom left;
+  background: url('/content/media/images/button_bg.png?1341247894') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
