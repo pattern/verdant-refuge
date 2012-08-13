@@ -21,7 +21,7 @@
   <title>{% block title %}{{ resource.meta.title }} | Verdant Refuge{% endblock %}</title>
   <meta name="description" content="{% if resource.meta.tagline -%}
                                       {{ resource.meta.tagline }}
-                                    {% else %}
+                                    {%- else -%}
                                       {{ resource.meta.description }}
                                     {%- endif %}">
   <meta name="author" content="{{ resource.meta.author }}">
