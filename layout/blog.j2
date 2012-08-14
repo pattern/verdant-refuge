@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<article>
+
 {% with %}
   {% set res = resource %}
   {% include "blog-header.j2" %}
@@ -12,6 +14,8 @@
 Entry block here.
 {% endblock entry %}
 {%- endfilter %}
+
+</article>
 
 {% endblock content %}
 
