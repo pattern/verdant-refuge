@@ -1,7 +1,7 @@
 <header>
   {% if res.meta.date %}
     <p class="dateline">
-      <time>{{ res.meta.date }}</time>,
+      <time datetime="{{ res.meta.created }}" pubdate="pubdate">{{ res.meta.date }}</time>,
       <span class="timeago" title="{{ res.meta.created }}"></span>.
       &nbsp;&nbsp;&nbsp;
       {% for tag in res.meta.tags -%}
