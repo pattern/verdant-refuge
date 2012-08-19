@@ -1,17 +1,28 @@
 # Verdant Refuge
 
-This is my personal website (Jeff Pickelman).  It is built using [hyde][hyde] (Version 0.8.5a14), a Python static website generator inspired by it's Ruby brother [jekyll][jekyll].
+This is my personal website (Jeff Pickelman)
+
+## Hyde
+
+It is built using [hyde][hyde] (Version 0.8.5a14), a Python static
+website generator inspired by it's Ruby brother [jekyll][jekyll].
 
 [hyde]: https://github.com/hyde/hyde "Hyde static website generator"
 [jekyll]: http://jekyllrb.com/ "Jekyll: blog-aware, static site generator in Ruby"
 
-Note that this current version of hyde was the result of a major refactor/restructuring of the original codebase located here: [old hyde][hyde-old].  As such, much of the "hyde" documentation available refers to the previous iteration and isn't particularly helpful in getting things working perfectly, but is still useful in getting a handle on what hyde is all about and how it has been used before.
+Note that this current version of hyde was the result of a major
+refactor/restructuring of the original codebase located here: [old
+hyde][hyde-old].  As such, much of the "hyde" documentation available
+refers to the previous iteration and isn't particularly helpful in
+getting things working perfectly, but is still useful in getting a
+handle on what hyde is all about and how it has been used before.
 
 [hyde-old]: https://github.com/lakshmivyas/hyde "Static website generator inspired by Jekyll (Deprecated)"
 
 ## Plugins
 
-This section will contain a list of the current plugins I am using for this site, and a description of what they are used for.
+This section contains a list of the current plugins I am using for this
+site, and a description of what they are used for.
 
 -   **MetaPlugin** - This allow metadata to be easily included about
     any files.  All the `meta.yaml` files in the directory tree of a
