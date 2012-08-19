@@ -6,6 +6,21 @@
 
 @import "fancy-buttons";
 
+/* Markdown Extra produces tables with the "align" attribute.
+   These three rules prevent the inheritied text-align property
+   from overriding the correct alignment. */
+td[align=right] {
+  text-align: right;
+}
+
+td[align=left] {
+  text-align: left;
+}
+
+td[align=center] {
+  text-align: center;
+}
+
 /* Font Stacks */
 $helvetica-neue: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $helvetica-neue-bold: 'HelveticaNeue-Bold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -17,7 +32,7 @@ $monaco: Monaco, Courier, "Courier New", monospace;
 /* Colors */
 $green: #31b66a;
 $light-green: #66e89e;
-$grey: #aaa;
+$grey: #999;
 $blue-selection: #aedbe8;
 
 $margin-bottom: 1.25em;
@@ -52,10 +67,16 @@ $total-width: $content-width + 2*$gutter-width;
   padding-bottom: 15px;
 }
 
-
-/* Classes */
 b, .bold {
   font-weight: 600;
+}
+
+.grey {
+  color: $grey;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .list-with-information {
@@ -66,8 +87,8 @@ b, .bold {
       p:first-child {
         margin-bottom: 0;
       }
-      // All but the first should be indented
-      p:not(:first-child) {
+      // All but the first paragraph (and tables) should be indented
+      p:not(:first-child), table {
         margin-left: 2em;
       }
       // All intermediary paragraphs should have a small margin

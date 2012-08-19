@@ -87,41 +87,68 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   outline: none;
 }
 
+/* Markdown Extra produces tables with the "align" attribute.
+   These three rules prevent the inheritied text-align property
+   from overriding the correct alignment. */
+/* line 12, sass/base.scss */
+td[align=right] {
+  text-align: right;
+}
+
+/* line 16, sass/base.scss */
+td[align=left] {
+  text-align: left;
+}
+
+/* line 20, sass/base.scss */
+td[align=center] {
+  text-align: center;
+}
+
 /* Font Stacks */
 /* Colors */
-/* line 43, sass/base.scss */
+/* line 58, sass/base.scss */
 .image-left {
   float: left;
   padding-right: 15px;
   padding-bottom: 15px;
 }
 
-/* line 49, sass/base.scss */
+/* line 64, sass/base.scss */
 .image-right {
   float: right;
   padding-left: 15px;
   padding-bottom: 15px;
 }
 
-/* Classes */
-/* line 57, sass/base.scss */
+/* line 70, sass/base.scss */
 b, .bold {
   font-weight: 600;
 }
 
-/* line 62, sass/base.scss */
+/* line 74, sass/base.scss */
+.grey {
+  color: #999999;
+}
+
+/* line 78, sass/base.scss */
+.italic {
+  font-style: italic;
+}
+
+/* line 83, sass/base.scss */
 .list-with-information ul {
   margin-bottom: 2.5em;
 }
-/* line 66, sass/base.scss */
+/* line 87, sass/base.scss */
 .list-with-information ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 70, sass/base.scss */
-.list-with-information ul li p:not(:first-child) {
+/* line 91, sass/base.scss */
+.list-with-information ul li p:not(:first-child), .list-with-information ul li table {
   margin-left: 2em;
 }
-/* line 74, sass/base.scss */
+/* line 95, sass/base.scss */
 .list-with-information ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }
@@ -186,7 +213,7 @@ p.dateline, span.dateline {
   letter-spacing: .15em;
   text-transform: uppercase;
   font-size: .75em;
-  color: #999;
+  color: #999999;
   margin-bottom: 0.313em;
 }
 /* line 53, sass/screen.scss */
@@ -202,6 +229,17 @@ p.tagline {
 }
 
 /* line 64, sass/screen.scss */
+p.update {
+  background-color: #cfe4d8;
+  padding: 10px;
+}
+
+/* line 69, sass/screen.scss */
+p.update:last-child {
+  margin-bottom: 0;
+}
+
+/* line 73, sass/screen.scss */
 button {
   -webkit-border-radius: 0.8em;
   -moz-border-radius: 0.8em;
@@ -269,7 +307,7 @@ button:active, button:active:visited {
   color: #222222;
 }
 
-/* line 69, sass/screen.scss */
+/* line 78, sass/screen.scss */
 code {
   background: #f7f7f7;
   border: 1px solid #c8c8c8;
@@ -278,7 +316,7 @@ code {
   padding: 2px;
 }
 
-/* line 78, sass/screen.scss */
+/* line 87, sass/screen.scss */
 div.codehilite pre, pre {
   overflow-x: auto;
   display: block;
@@ -290,13 +328,13 @@ div.codehilite pre, pre {
   line-height: 1.75em;
   padding: 10px;
 }
-/* line 89, sass/screen.scss */
+/* line 98, sass/screen.scss */
 div.codehilite pre code, pre code {
   color: #444;
   font-size: 1em;
 }
 
-/* line 95, sass/screen.scss */
+/* line 104, sass/screen.scss */
 blockquote {
   background: #ecfaf2;
   padding: 10px;
@@ -306,12 +344,12 @@ blockquote {
   border-left-width: 8px;
 }
 
-/* line 104, sass/screen.scss */
+/* line 113, sass/screen.scss */
 blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* line 108, sass/screen.scss */
+/* line 117, sass/screen.scss */
 blockquote span {
   display: block;
   font-family: 'HelveticaNeue';
@@ -320,42 +358,42 @@ blockquote span {
   color: #555;
 }
 
-/* line 116, sass/screen.scss */
+/* line 125, sass/screen.scss */
 a, a:visited {
-  color: #268e53;
+  color: #31b66a;
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
 }
 
-/* line 122, sass/screen.scss */
+/* line 131, sass/screen.scss */
 a:hover, a:active {
-  color: #1f7242;
+  color: #268e53;
   border-bottom: 1px solid #bbb;
 }
 
-/* line 129, sass/screen.scss */
+/* line 138, sass/screen.scss */
 h1.title a, h1.title a:visited, h1.title a:hover, h1.title a:active, h1 a, h1 a:visited, h1 a:hover, h1 a:active, h2 a, h2 a:visited, h2 a:hover, h2 a:active, h3 a, h3 a:visited, h3 a:hover, h3 a:active, h4 a, h4 a:visited, h4 a:hover, h4 a:active {
   color: #333;
   text-decoration: none;
   border-bottom-width: 0;
 }
 
-/* line 136, sass/screen.scss */
+/* line 145, sass/screen.scss */
 strong, b {
   font-weight: 600;
 }
 
-/* line 140, sass/screen.scss */
+/* line 149, sass/screen.scss */
 em, i {
   font-style: italic;
 }
 
-/* line 144, sass/screen.scss */
+/* line 153, sass/screen.scss */
 ul {
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
-/* line 147, sass/screen.scss */
+/* line 156, sass/screen.scss */
 ul li {
   background: url("/media/images/green-bullet.png") no-repeat 2px 12px;
   padding-left: 14px;
@@ -363,17 +401,40 @@ ul li {
   font-size: 1.125em;
   line-height: 1.75em;
 }
-/* line 153, sass/screen.scss */
+/* line 162, sass/screen.scss */
 ul li p {
   font-size: 100%;
   line-height: 1.75em;
 }
-/* line 160, sass/screen.scss */
+/* line 169, sass/screen.scss */
 ul li ul li {
   font-size: 100%;
 }
 
-/* line 168, sass/screen.scss */
+/* line 177, sass/screen.scss */
+table {
+  margin-top: 0.625em;
+}
+
+/* line 181, sass/screen.scss */
+th, td {
+  background: #b0eac9;
+  line-height: 1em;
+  padding: 6px 10px;
+  border-bottom: 1px solid white;
+}
+
+/* line 188, sass/screen.scss */
+th:not(:last-child), td:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+/* line 192, sass/screen.scss */
+td {
+  background: #ecfaf2;
+}
+
+/* line 196, sass/screen.scss */
 ul.tags {
   *zoom: 1;
   margin-bottom: 0;
@@ -384,51 +445,51 @@ ul.tags:after {
   display: table;
   clear: both;
 }
-/* line 171, sass/screen.scss */
+/* line 199, sass/screen.scss */
 ul.tags li {
   display: inline;
   float: left;
   margin-right: 1em;
 }
 
-/* line 179, sass/screen.scss */
-header {
+/* line 207, sass/screen.scss */
+body > header {
   min-width: 47.75em;
   background-color: #ecfaf2;
 }
-/* line 182, sass/screen.scss */
-header #header_inner {
+/* line 210, sass/screen.scss */
+body > header #header_inner {
   width: 43.75em;
   margin: 0px auto;
   padding: 2em;
   margin-bottom: 2.5em;
 }
-/* line 186, sass/screen.scss */
-header #header_inner h1 {
+/* line 214, sass/screen.scss */
+body > header #header_inner h1 {
   /* text-shadow: 0px 2px 0px #fff; */
   font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   margin-bottom: .5em;
 }
-/* line 191, sass/screen.scss */
-header #header_inner h1 a {
+/* line 219, sass/screen.scss */
+body > header #header_inner h1 a {
   border-bottom: none;
 }
-/* line 194, sass/screen.scss */
-header #header_inner h1 span {
-  color: #aaaaaa;
+/* line 222, sass/screen.scss */
+body > header #header_inner h1 span {
+  color: #aaa;
 }
-/* line 197, sass/screen.scss */
-header #header_inner h1 span:first-child {
+/* line 225, sass/screen.scss */
+body > header #header_inner h1 span:first-child {
   color: #31b66a;
   font-weight: bold;
 }
-/* line 202, sass/screen.scss */
-header #header_inner p {
+/* line 230, sass/screen.scss */
+body > header #header_inner p {
   margin: 0;
 }
 
-/* line 208, sass/screen.scss */
+/* line 236, sass/screen.scss */
 #header_inner_2 {
   *zoom: 1;
 }
@@ -439,14 +500,14 @@ header #header_inner p {
   clear: both;
 }
 
-/* line 212, sass/screen.scss */
+/* line 240, sass/screen.scss */
 #title {
   display: inline;
   float: left;
   width: 21.875em;
   margin-right: 4em;
 }
-/* line 216, sass/screen.scss */
+/* line 244, sass/screen.scss */
 #title div {
   display: inline;
   float: left;
@@ -454,20 +515,20 @@ header #header_inner p {
   height: 60px;
   margin-right: 15px;
 }
-/* line 222, sass/screen.scss */
+/* line 250, sass/screen.scss */
 #title img {
   width: 58px;
   height: 58px;
   border: 1px solid #aaa;
 }
 
-/* line 229, sass/screen.scss */
+/* line 257, sass/screen.scss */
 #nav {
   display: inline;
   float: left;
   width: 17.875em;
 }
-/* line 232, sass/screen.scss */
+/* line 260, sass/screen.scss */
 #nav ul.nav {
   *zoom: 1;
   margin: .7em 0 0 0;
@@ -478,7 +539,7 @@ header #header_inner p {
   display: table;
   clear: both;
 }
-/* line 235, sass/screen.scss */
+/* line 263, sass/screen.scss */
 #nav ul.nav li {
   background: none;
   padding-left: 0;
@@ -487,7 +548,7 @@ header #header_inner p {
   width: 6em;
   margin-bottom: 1em;
 }
-/* line 242, sass/screen.scss */
+/* line 270, sass/screen.scss */
 #nav ul.nav li a {
   display: block;
   text-align: center;
@@ -495,30 +556,42 @@ header #header_inner p {
   background: #c4efd6;
   border-bottom-width: 0px;
 }
-/* line 249, sass/screen.scss */
+/* line 277, sass/screen.scss */
 #nav ul.nav li a:hover {
   background: #a8e8c3;
 }
-/* line 252, sass/screen.scss */
+/* line 280, sass/screen.scss */
 #nav ul.nav li a:active {
   position: relative;
   top: 1px;
 }
-/* line 257, sass/screen.scss */
+/* line 285, sass/screen.scss */
 #nav ul.nav li:nth-child(2n+1) {
   margin-right: 2em;
 }
 
-/* line 263, sass/screen.scss */
+/* line 291, sass/screen.scss */
 #main {
   width: 43.75em;
   margin: 0px auto;
   padding: 0em 2em;
 }
 
-/* line 268, sass/screen.scss */
+/* line 296, sass/screen.scss */
 footer {
   width: 43.75em;
   margin: 0px auto;
-  padding: 0em 2em 5em 2em;
+  padding: 2em 2em 5em 2em;
+  border-top: 1px dashed #74d99f;
+}
+/* line 300, sass/screen.scss */
+footer p {
+  text-align: center;
+  font-size: 0.875em;
+  line-height: 1.15em;
+}
+
+/* line 307, sass/screen.scss */
+article {
+  margin-bottom: 1.875em;
 }

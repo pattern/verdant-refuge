@@ -87,41 +87,68 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   outline: none;
 }
 
+/* Markdown Extra produces tables with the "align" attribute.
+   These three rules prevent the inheritied text-align property
+   from overriding the correct alignment. */
+/* line 12, sass/base.scss */
+td[align=right] {
+  text-align: right;
+}
+
+/* line 16, sass/base.scss */
+td[align=left] {
+  text-align: left;
+}
+
+/* line 20, sass/base.scss */
+td[align=center] {
+  text-align: center;
+}
+
 /* Font Stacks */
 /* Colors */
-/* line 43, sass/base.scss */
+/* line 58, sass/base.scss */
 .image-left {
   float: left;
   padding-right: 15px;
   padding-bottom: 15px;
 }
 
-/* line 49, sass/base.scss */
+/* line 64, sass/base.scss */
 .image-right {
   float: right;
   padding-left: 15px;
   padding-bottom: 15px;
 }
 
-/* Classes */
-/* line 57, sass/base.scss */
+/* line 70, sass/base.scss */
 b, .bold {
   font-weight: 600;
 }
 
-/* line 62, sass/base.scss */
+/* line 74, sass/base.scss */
+.grey {
+  color: #999999;
+}
+
+/* line 78, sass/base.scss */
+.italic {
+  font-style: italic;
+}
+
+/* line 83, sass/base.scss */
 .list-with-information ul {
   margin-bottom: 2.5em;
 }
-/* line 66, sass/base.scss */
+/* line 87, sass/base.scss */
 .list-with-information ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 70, sass/base.scss */
-.list-with-information ul li p:not(:first-child) {
+/* line 91, sass/base.scss */
+.list-with-information ul li p:not(:first-child), .list-with-information ul li table {
   margin-left: 2em;
 }
-/* line 74, sass/base.scss */
+/* line 95, sass/base.scss */
 .list-with-information ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }
