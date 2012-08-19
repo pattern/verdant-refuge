@@ -8,22 +8,34 @@ plugins:
   - hyde.ext.plugins.urls.UrlCleanerPlugin
   - hyde.ext.plugins.tagger.TaggerPlugin
   - hyde.ext.plugins.sorter.SorterPlugin
+  - hyde.ext.plugins.textlinks.TextlinksPlugin
   # - hyde.ext.plugins.git.GitDatesPlugin
 context:
   data:
     author: Jeff Pickelman
     description: Verdant Refuge - Jeff Pickelman's personal website.
     version: 0.1
+    social:
+      - name: Github
+        link: https://github.com/pattern
+      - name: Twitter
+        link: https://twitter.com/pickelman
+      - name: Google Plus
+        link: https://plus.google.com/117418095272585102918
+      - name: LinkedIn
+        link: http://www.linkedin.com/profile/view?id=16300726
+      - name: Facebook
+        link: https://www.facebook.com/pickelman
 urlcleaner:
   index_file_names:
     # Identifies the files that represents a directory listing.
     # These file names are automatically stripped away when
     # the content_url function is called.
     - index.html
-  #strip_extensions:
+  strip_extensions:
     # The following extensions are automatically removed when
     # generating the urls using content_url function.
-    #- html
+    - html
   # This option will append a slash to the end of directory paths
   append_slash: true
 sorter:
