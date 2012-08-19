@@ -89,7 +89,16 @@
     {% endmark %}
   </div>
   <footer>
-    <!-- Nothing Yet! -->
+    <p class="">
+{% filter markdown %}
+
+I'm also on
+{% import "macros.j2" as macros with context %}
+{{ macros.render_social_list() }}
+
+{% endfilter %}
+    </p>
+    <p class="">Copyright &copy; 2012 Jeff Pickelman.</p>
   </footer>
   
   {% block js %}
