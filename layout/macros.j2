@@ -1,0 +1,7 @@
+{% macro render_social_list() -%}
+  {% for social_item in social -%}
+    {% if loop.last %}and {% endif -%}
+    [{{ social_item.name }}]({{ social_item.link }})
+    {%- if loop.last %}.{% else %}, {% endif %}
+  {%- endfor %}
+{%- endmacro %}
