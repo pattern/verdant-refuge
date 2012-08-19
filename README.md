@@ -15,11 +15,11 @@ This section will contain a list of the current plugins I am using for this site
 
 -   **MetaPlugin** - This allow metadata to be easily included about
     any files.  All the `meta.yaml` files in the directory tree of a
-    given file are evaluated, then the [YAML front matter](yaml) of the
+    given file are evaluated, then the [YAML front matter][yaml] of the
     file is evaluated.  The inheritance allows you to keep [DRY][dry]
     while still being as descriptive as needed.
 
-[yaml]: https://github.com/mojombo/jekyll/wiki/yaml-front-matter "Describes what YAML front matter is, ignore the Jekyll-specific bits!"
+[yaml]: https://github.com/mojombo/jekyll/wiki/yaml-front-matter "Describes YAML front matter - ignore the Jekyll-specific bits!"
 [dry]: http://en.wikipedia.org/wiki/Don't_repeat_yourself "Wikipedia: Don't Repeat Yourself (DRY)"
 
 -   **AutoExtendPlugin** - This plugin wires up the `extends` and
