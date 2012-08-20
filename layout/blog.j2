@@ -9,13 +9,23 @@
   {% include "blog-header.j2" %}
 {% endwith %}
 
-{% filter markdown -%}
+{% filter markdown|typogrify -%}
 {% block entry %}
 Entry block here.
 {% endblock entry %}
 {%- endfilter %}
 
 </article>
+
+{# Next/Previous article functionality - not live for now.
+{% if resource.prev_by_time %}
+  <p>&lt; Previous: <a href="{{ resource.prev_by_time.full_url }}">{{ resource.prev_by_time.meta.title }}</a></p>
+{% endif %}
+
+{% if resource.next_by_time %}
+  <p>&gt; Next: <a href="{{ resource.next_by_time.full_url }}">{{ resource.next_by_time.meta.title }}</a></p>
+{% endif %}
+#}
 
 {% endblock content %}
 
