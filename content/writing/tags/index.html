@@ -14,7 +14,7 @@ default_block: content
 
 {# ... and get all resurces tagged with that node. #}
 {% for res in resource.node.walk_resources_tagged_with(tag) %}
--   [{{ res.meta.title }}]({{ res.full_url }}) ({{ res.meta.date }})
+-   [{{ res.meta.title }}]({{ res.full_url }}) <span class="grey">({{ res.meta.date }})</span>
 {% endfor %}
 
 {% endfor %}

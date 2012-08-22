@@ -7,9 +7,10 @@ listable: false
 ---
 
 {% for res in resource.node.walk_resources_sorted_by_time() %}
-  {# above used to be:  resource.node. instead of site.content. #}
-  {% include "blog-header.j2" %}
-  <div style="height: 20px;"></div>
+  <article>
+    {# above used to be:  resource.node. instead of site.content. #}
+    {% include "blog-header.j2" %}
+  </article>
 {% endfor %}
 
 
