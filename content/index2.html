@@ -1,0 +1,75 @@
+---
+title: Jeff Pickelman
+description: |
+  I'm Jeff Pickelman, a full-stack web developer.
+  I am passionate about bringing ideas to fruition on the web.
+---
+
+<div id="home_posts">
+{% filter markdown %}
+
+## Recent Posts
+
+{% for res in resource.node.walk_resources_sorted_by_time()|top(3) %}
+-   [{{ res.meta.title }}]({{ res.full_url }})
+{% endfor %}
+
+{% endfilter %}
+</div>
+
+
+
+
+{# Old content:
+
+
+<hr />
+
+{% for res in resource.node.walk_resources_sorted_by_time() %}
+  {{ res.name }}<br />
+  {{ res.url }}<br />
+  {{ res.meta.title }}<br /><br /><br />
+{% endfor %}
+
+
+
+
+# Welcome!
+
+This is a line of text that will hopefully wrap all the way around the page a few times.  This will give me a better feel for how a lot of text at this size would look in an article.
+
+    @task
+    def foo():
+        sudo('do stuff')
+
+    @task
+    def run():
+        try:
+            execute(foo)
+        except KeyboardInterrupt:
+            print('some closing info')
+
+There is some `code` in here too. I want to style it up nice and purty as well!  I want to see multiple lines of text with `some code` in all of them to see how the line-spacing of the paragraph turns out - I hope I can make it look exactly as I wish!
+
+This is a test:
+
+{% for res in site.content.walk_resources_sorted_by_date() %}
+  * [{{ res.slug|capitalize|replace("-"," ") }}]({{ res.full_url }}) \
+    ({{ res.name }})
+{% endfor %}
+
+Test 2:
+
+{% for res in resource.node.walk_resources_sorted_by_time() %}
+  {% refer to res.url as post %}
+  <article {{'class='~class if class }}>
+  <h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
+  <a href="{{ content_url(res.url) }}">{{ post.image|markdown }}</a>
+  {{ post.excerpt|markdown }}
+  <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+      Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+  </time>
+  </article>
+{% endfor %}
+
+#}
