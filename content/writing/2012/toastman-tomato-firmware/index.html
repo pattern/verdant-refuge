@@ -28,23 +28,23 @@ I decided I take the dive and started researching the different firmware options
 
 **DD-WRT** appears to be a one-size-fits-all package with a large forum presence and a broad range of supported hardware.  It appears to be one of the oldest firmwares available, and as such there is a wealth of documentation/tutorials/forum-postings - albeit sometimes outdated.
 
-**OpenWrt** takes a more Unix-y approach in that it aims to provide a smorgasbord of packages.  The user can pick and choose which functionality they need and build a custom firmware to their specifications.  This approach appeals to me, but alas, I needed a quick solution.  In the future I may revisit OpenWrt and see how the package management works in practice.
+**OpenWrt** takes a more built-to-order approach in that it aims to provide a smorgasbord of packages.  The user can pick and choose which functionality they need and build a custom firmware to their specifications.  This approach appeals to me, but alas, I needed a quick solution.  In the future I may revisit OpenWrt and see how the package management works in practice.
 
 **Tomato** proper was last updated in June of 2010, but there is an active community with roughly ten individuals maintaining their own branches, and making releases with different subsets of features available.  Check out the [feature comparison table][tomato-features-wikipedia].  I zeroed in on the "Toastman" version of Tomato mainly because there was a [wealth of information][toastman-links] listed on Toastman's website.
 
 [tomato-features-wikipedia]: http://en.wikipedia.org/wiki/Tomato_(firmware)#Feature_comparison "Wikipedia: Tomato Feature Comparison"
 [toastman-links]: http://toastmanfirmware.yolasite.com/common-tomato-topics.php "Toastman Tomato - List of Common Tomato Topics"
 
-## Hardware &amp; Installation
+## Hardware & Installation
 
-![Linksys WRT54GL Router]({{ resource.full_url }}linksys-wrt54gl.jpeg){: .image-right }
+![Linksys WRT54GL Router on a desk]({{ resource.full_url }}linksys-wrt54gl.jpeg "Linksys WRT54GL Router"){: .image-right }
 A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CPU, 16MB RAM, 4MB Flash) willingly gave itself to the cause of being a Tomato guinea pig.  I read a good amount of the links on Toastman's website, as well as some background information on the DD-WRT site (including the all-important [30/30/30 rule][30-30-30], which is to be performed before and after every flash of the NVRAM).  Upgrading from the stock firmware to Tomato went without a hitch.  I spent a good couple of hours poking around and exploring all the options available.
 
 [wrt54gl-wikipedia]: http://en.wikipedia.org/wiki/Linksys_WRT54G_series#WRT54GL "Wikipedia: Linksys WRT54GL"
 [30-30-30]: http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30 "Router Hard Reset, or 30/30/30 Rule"
 
-![Belkin Share Max N300+ Router]({{ resource.full_url }}belkin-n300.png){: .image-left }
-I also picked up a Belkin Share Max N300+ router.  With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless - this router is a steal for $25 shipped (from [Expansys][expansys]).
+![Belkin Share Max N300+ Router with ports labeled]({{ resource.full_url }}belkin-n300.png "Belkin Share Max N300+ Router"){: .image-left }
+I picked up a Belkin Share Max N300+ router.  With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless - this router is a steal for $25 shipped (from [Expansys][expansys]).  It has a 453MHz processor, 8MB of flash, and a lofty 64MB of ram.  The
 
 [expansys]: http://www.expansys-usa.com/ "Expansys"
 
