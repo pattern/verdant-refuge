@@ -76,12 +76,14 @@ button {
 }
 
 code {
+  @include border-radius(2px);
   background: #f7f7f7;
   border: 1px solid #c8c8c8;
   font-family: $monaco;
   font-size: .875em;
   padding: 2px;
-  // color: darken($green, 25%);
+  // This prevents <code> elements from spanning multiple lines:
+  white-space: nowrap;
 }
 
 div.codehilite pre, pre {
@@ -131,6 +133,13 @@ a, a:visited {
 a:hover, a:active {
   color: darken($green, 10%);
   border-bottom: 1px solid #bbb;
+}
+
+// This removes the border-bottom on linked images
+// From: http://stackoverflow.com/a/1992861
+a img, a:visited img {
+  border: none;
+  vertical-align: top;
 }
 
 h1.title, h1, h2, h3, h4 {
@@ -257,7 +266,7 @@ body > header {
 #nav {
   @include float-left;
   width: $content-width/2 - $gutter-width*2;
-  ul.nav {
+  ul {
     @include pie-clearfix;
     margin: .7em 0 0 0;
     li {
@@ -279,7 +288,7 @@ body > header {
       }
       a:active {
         position: relative;
-        top: 1px;
+        top: 2px;
       }
     }
     li:nth-child(2n+1) {
@@ -295,8 +304,10 @@ body > header {
 
 footer {
   @include centered-base;
-  padding: 2em 2em 5em 2em;
-  border-top: 1px dashed lighten($green, 20%);
+  // padding: 2em 2em 5em 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-top: 4px solid #eee;
   p {
     text-align: center;
     font-size: 0.875em;
@@ -308,4 +319,16 @@ article {
   margin-bottom: $margin-bottom*1.5;
 }
 
+#comments {
+  @include border-radius(5px);
+  background: #f3f3f3;
+  padding: 15px;
+}
 
+#comments_omitted {
+  @extends #comments;
+  display: none;
+  font-style: italic;
+}
+
+@import "media-queries";

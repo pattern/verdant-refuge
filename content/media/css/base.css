@@ -115,40 +115,70 @@ td[align=center] {
 }
 
 /* line 64, sass/base.scss */
+div.image-left {
+  float: left;
+  width: 140px;
+  border: 3px solid #f0f0f0;
+  padding: 3px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+/* line 71, sass/base.scss */
+div.image-left p {
+  width: inherit;
+  text-align: center;
+  margin-bottom: 0.625em;
+  font-size: .85em;
+  line-height: 1.25em;
+}
+/* line 77, sass/base.scss */
+div.image-left p a {
+  width: inherit;
+}
+/* line 79, sass/base.scss */
+div.image-left p a img {
+  width: inherit;
+}
+/* line 84, sass/base.scss */
+div.image-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 89, sass/base.scss */
 .image-right {
   float: right;
   padding-left: 15px;
   padding-bottom: 15px;
 }
 
-/* line 70, sass/base.scss */
+/* line 95, sass/base.scss */
 b, .bold {
   font-weight: 600;
 }
 
-/* line 74, sass/base.scss */
+/* line 99, sass/base.scss */
 .grey {
   color: #999999;
 }
 
-/* line 78, sass/base.scss */
+/* line 103, sass/base.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 83, sass/base.scss */
+/* line 108, sass/base.scss */
 .list-with-information ul {
   margin-bottom: 2.5em;
 }
-/* line 87, sass/base.scss */
+/* line 112, sass/base.scss */
 .list-with-information ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 91, sass/base.scss */
+/* line 116, sass/base.scss */
 .list-with-information ul li p:not(:first-child), .list-with-information ul li table {
   margin-left: 2em;
 }
-/* line 95, sass/base.scss */
+/* line 120, sass/base.scss */
 .list-with-information ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }

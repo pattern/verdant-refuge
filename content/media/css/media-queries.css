@@ -4,4 +4,24 @@
     display: block;
     width: 100%;
   }
+
+  /* line 4, sass/media-queries.scss */
+  #nav ul {
+    margin-top: 1.5em;
+  }
+  /* line 6, sass/media-queries.scss */
+  #nav ul li {
+    margin-right: 1em;
+  }
+}
+@media only print {
+  /* line 20, sass/media-queries.scss */
+  #nav, #comments {
+    display: none;
+  }
+
+  /* line 21, sass/media-queries.scss */
+  #comments_omitted {
+    display: block;
+  }
 }
