@@ -13,10 +13,10 @@ tags:
 
 I recently moved into a new house that I share with 3 other people.  As a web developer and general internet enthusiast, I needed a way to make sure a couple of people simultaneously streaming Netflix and Hulu plus some Pandora and stray downloading thrown in would not diminish my ability to <s>constantly refresh Hacker News</s> Get Things Done&trade;.
 
-I stumbled upon the concept of [Quality of Service][qos-wikipedia] (QoS) while reading Jeff Atwood's eye-opening post on the wonders of [open source firmware on commodity hardware][coding-horror-1].  QoS allows you to apply classification rules to all traffic through you router, and limit the incoming or outgoing bandwidth available to each type of traffic.
+I stumbled upon the concept of [Quality of Service][qos-wikipedia] (QoS) while reading Jeff Atwood's eye-opening post on the wonders of [open source firmware on commodity hardware][coding-horror-1].  QoS allows you to apply classification rules to all traffic through your router, and limit the incoming or outgoing bandwidth available to each type of traffic.  It can also prioritize [SYN, FIN, and RST packets][tcp-wikipedia] for snappy TCP performance.
 
-[qos-wikipedia]: http://en.wikipedia.org/wiki/Quality_of_service "Wikipedia: Quality of Service"
 [coding-horror-1]: http://www.codinghorror.com/blog/2012/06/because-everyone-still-needs-a-router.html "Because Everyone (Still) Needs a Router"
+[tcp-wikipedia]: http://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure "Wikipedia: Transmission Control Protocol"
 
 ## Research
 
@@ -35,7 +35,7 @@ I decided I take the dive and started researching the different firmware options
 [tomato-features-wikipedia]: http://en.wikipedia.org/wiki/Tomato_(firmware)#Feature_comparison "Wikipedia: Tomato Feature Comparison"
 [toastman-links]: http://toastmanfirmware.yolasite.com/common-tomato-topics.php "Toastman Tomato - List of Common Tomato Topics"
 
-## Hardware & Installation
+## Hardware
 
 ![Linksys WRT54GL Router on a desk]({{ resource.full_url }}linksys-wrt54gl.jpeg "Linksys WRT54GL Router"){: .image-right }
 A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CPU, 16MB RAM, 4MB Flash) willingly gave itself to the cause of being a Tomato guinea pig.  I read a good amount of the links on Toastman's website, as well as some background information on the DD-WRT site (including the all-important [30/30/30 rule][30-30-30], which is to be performed before and after every flash of the NVRAM).  Upgrading from the stock firmware to Tomato went without a hitch.  I spent a good couple of hours poking around and exploring all the options available.
@@ -44,9 +44,39 @@ A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CP
 [30-30-30]: http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30 "Router Hard Reset, or 30/30/30 Rule"
 
 ![Belkin Share Max N300+ Router with ports labeled]({{ resource.full_url }}belkin-n300.png "Belkin Share Max N300+ Router"){: .image-left }
-I picked up a Belkin Share Max N300+ router.  With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless - this router is a steal for $25 shipped (from [Expansys][expansys]).  It has a 453MHz processor, 8MB of flash, and a lofty 64MB of ram.  The
+I picked up a Belkin Share Max N300+ router.  With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless - this router is a steal for $25 shipped (from [Expansys][expansys]).  It has a 453MHz CPU, 8MB of flash, and a lofty 64MB of ram.  In initial testing I found it's wireless signal strength to be marginally better than the WRT54GL's, even without external antennae.
 
 [expansys]: http://www.expansys-usa.com/ "Expansys"
+
+## WDS (Wireless Distribution System)
+
+[WDS][wds-wikipedia] is a way for access points to wirelessly associate with each other.  It allows you to extend your wireless network without having to have a physical ethernet cable connecting your access points.  It is quite simple to set up - you just need to make sure both access points are configured with the same network speed, SSID, channel, security/encyption/key, and you need to explicitly tell each AP the MAC address of the other APs.
+
+This article describes how to [extend a wireless network with tomato routers][howtogeek]. It was helpful in making sure I understood the basics of what was going on, and verifying I made all the setting changes required.  This post on superuser.com explains [Multi Access Point Networking][multi-ap] and was useful to get my brain fully wrapped around the concepts of wireless networking that I hadn't properly understood before.
+
+[wds-wikipedia]: http://en.wikipedia.org/wiki/Wireless_distribution_system "Wikipedia: Wireless distribution system"
+[howtogeek]: http://www.howtogeek.com/104007/how-to-extend-your-wireless-network-with-tomato-powered-routers/ "How To Extend Your Wireless Network with Tomato-Powered Routers"
+[multi-ap]: http://superuser.com/questions/122441/multiple-access-points-for-the-same-ssid/122508#122508 "Multi-AP Roaming Network Background"
+
+## Quality of Service
+
+<div class="image-left" markdown="1">
+[![QoS Bandwidth Pie Charts][image-1]][image-1]
+
+<!-- {: style="width: 140px;" } -->
+
+QoS Bandwidth Pie Charts (Upload & Download)
+</div>
+[image-1]: {{ resource.full_url }}qos-chart.png "QoS Bandwidth Chart"
+The graphs to the left show a snapshot of my traffic while I am streaming a YouTube video, downloading an application, and browsing with many tabs open.  I can see how the QoS rules are classifying my traffic, and by clicking on either the pie chart or the listing at the left I can drill down and see exactly what connections are active, their source/destination ports and IP addresses, and the total amount of data transferred for each connection.  This is clearly overkill for most, but just KNOWING all that information is there for the gleaning makes me happy.  
+
+[qos-wikipedia]: http://en.wikipedia.org/wiki/Quality_of_service "Wikipedia: Quality of Service"
+
+
+
+
+
+
 
 
 A small sample of the wonders within:
