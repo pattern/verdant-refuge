@@ -58,7 +58,7 @@ site, and a description of what they are used for.
 
 ## Known Bugs
 
--   The jquery.timeago.js plugin doesn't seem to be working correctly on
-    iOS devices - on my iPhone it displays "NAN Years Ago" instead of
-    the actual timeago.
+-   **jQuery.timeago** (9/27/2012): The jquery.timeago.js plugin
+    doesn't seem to be working correctly on iOS devices - on an iPhone
+    it displays "NAN Years Ago" instead of the actual timeago.
 
