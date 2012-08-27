@@ -56,7 +56,9 @@ site, and a description of what they are used for.
 -   **TextlinksPlugin** - This simply gives you a more concise way to
     link to both content urls, and media urls.
 
+## Known Bugs
 
-
-
+-   The jquery.timeago.js plugin doesn't seem to be working correctly on
+    iOS devices - on my iPhone it displays "NAN Years Ago" instead of
+    the actual timeago.
 
