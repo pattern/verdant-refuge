@@ -18,14 +18,19 @@ context:
     social:
       - name: Github
         link: https://github.com/pattern
+        title: Github - "pattern"
       - name: Twitter
         link: https://twitter.com/pickelman
+        title: Twitter - @pickelman
       - name: Google Plus
         link: https://plus.google.com/117418095272585102918?rel=author
+        title: Google Plus Profile
       - name: LinkedIn
         link: http://www.linkedin.com/profile/view?id=16300726
+        title: LinkedIn Profile
       - name: Facebook
         link: https://www.facebook.com/pickelman
+        title: Facebook Profile
 urlcleaner:
   index_file_names:
     # Identifies the files that represents a directory listing.
