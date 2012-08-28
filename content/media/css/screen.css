@@ -109,28 +109,28 @@ td[align=center] {
 /* Colors */
 /* Two classes to position <img>s in articles: */
 /* line 61, sass/base.scss */
-img.image-left, figure.image-left, figure.image-right {
+img.left, figure.left, figure.right {
   float: left;
-  padding-right: 15px;
-  padding-bottom: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 /* line 67, sass/base.scss */
-img.image-right, figure.image-right {
+img.right, figure.right {
   float: right;
-  padding-left: 15px;
-  padding-bottom: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
 
 /* Two classes to position <figure>s in articles: */
 /* line 76, sass/base.scss */
-figure.image-left, figure.image-right {
+figure.left, figure.right {
   width: 140px;
   border: 3px solid #f0f0f0;
   padding: 3px;
 }
 /* line 81, sass/base.scss */
-figure.image-left p, figure.image-right p {
+figure.left p, figure.right p {
   width: inherit;
   text-align: center;
   margin-bottom: 0.625em;
@@ -138,16 +138,22 @@ figure.image-left p, figure.image-right p {
   line-height: 1.25em;
 }
 /* line 87, sass/base.scss */
-figure.image-left p a, figure.image-right p a {
+figure.left p a, figure.right p a {
   width: inherit;
 }
 /* line 89, sass/base.scss */
-figure.image-left p a img, figure.image-right p a img {
+figure.left p a img, figure.right p a img {
   width: inherit;
 }
 /* line 94, sass/base.scss */
-figure.image-left p:last-child, figure.image-right p:last-child {
+figure.left p:last-child, figure.right p:last-child {
   margin-bottom: 0;
+}
+
+/* line 99, sass/base.scss */
+figure.right {
+  /* Obtain all the figure styling */
+  /* And the correct position and margin */
 }
 
 /* line 105, sass/base.scss */
