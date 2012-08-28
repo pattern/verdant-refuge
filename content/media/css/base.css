@@ -107,78 +107,95 @@ td[align=center] {
 
 /* Font Stacks */
 /* Colors */
-/* line 58, sass/base.scss */
-.image-left {
+/* Two classes to position <img>s in articles: */
+/* line 61, sass/base.scss */
+img.image-left, figure.image-left, figure.image-right {
   float: left;
   padding-right: 15px;
   padding-bottom: 15px;
 }
 
-/* line 64, sass/base.scss */
-div.image-left {
-  float: left;
+/* line 67, sass/base.scss */
+img.image-right, figure.image-right {
+  float: right;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+/* Two classes to position <figure>s in articles: */
+/* line 76, sass/base.scss */
+figure.image-left, figure.image-right {
   width: 140px;
   border: 3px solid #f0f0f0;
   padding: 3px;
-  margin-right: 15px;
-  margin-bottom: 15px;
 }
-/* line 71, sass/base.scss */
-div.image-left p {
+/* line 81, sass/base.scss */
+figure.image-left p, figure.image-right p {
   width: inherit;
   text-align: center;
   margin-bottom: 0.625em;
   font-size: .85em;
   line-height: 1.25em;
 }
-/* line 77, sass/base.scss */
-div.image-left p a {
+/* line 87, sass/base.scss */
+figure.image-left p a, figure.image-right p a {
   width: inherit;
 }
-/* line 79, sass/base.scss */
-div.image-left p a img {
+/* line 89, sass/base.scss */
+figure.image-left p a img, figure.image-right p a img {
   width: inherit;
 }
-/* line 84, sass/base.scss */
-div.image-left p:last-child {
+/* line 94, sass/base.scss */
+figure.image-left p:last-child, figure.image-right p:last-child {
   margin-bottom: 0;
 }
 
-/* line 89, sass/base.scss */
-.image-right {
-  float: right;
-  padding-left: 15px;
-  padding-bottom: 15px;
-}
-
-/* line 95, sass/base.scss */
+/* line 105, sass/base.scss */
 b, .bold {
   font-weight: 600;
 }
 
-/* line 99, sass/base.scss */
+/* line 109, sass/base.scss */
 .grey {
   color: #999999;
 }
 
-/* line 103, sass/base.scss */
+/* line 113, sass/base.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 108, sass/base.scss */
-.list-with-information ul {
-  margin-bottom: 2.5em;
+/* line 118, sass/base.scss */
+ul {
+  margin-bottom: 1.25em;
+  margin-left: 1.25em;
 }
-/* line 112, sass/base.scss */
-.list-with-information ul li p:first-child {
+/* line 121, sass/base.scss */
+ul li {
+  background: url("/media/images/green-bullet.png") no-repeat 2px 12px;
+  padding-left: 14px;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-size: 1.125em;
+  line-height: 1.75em;
+}
+/* line 127, sass/base.scss */
+ul li p {
+  font-size: 100%;
+  line-height: 1.75em;
+}
+/* line 134, sass/base.scss */
+ul li ul li {
+  font-size: 100%;
+}
+/* line 141, sass/base.scss */
+ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 116, sass/base.scss */
-.list-with-information ul li p:not(:first-child), .list-with-information ul li table {
+/* line 146, sass/base.scss */
+ul li p:not(:first-child), ul li table {
   margin-left: 2em;
 }
-/* line 120, sass/base.scss */
-.list-with-information ul li p:not(:first-child):not(:last-child) {
+/* line 151, sass/base.scss */
+ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }

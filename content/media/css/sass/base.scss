@@ -55,19 +55,29 @@ $total-width: $content-width + 2*$gutter-width;
   float: left;
 }
 
-.image-left {
+
+/* Two classes to position <img>s in articles: */
+
+img.image-left {
   float: left;
   padding-right: 15px;
   padding-bottom: 15px;
 }
 
-div.image-left {
-  float: left;
+img.image-right {
+  float: right;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+
+/* Two classes to position <figure>s in articles: */
+
+figure.image-left {
+  @extend img.image-left;
   width: 140px;
   border: 3px solid #f0f0f0;
   padding: 3px;
-  margin-right: 15px;
-  margin-bottom: 15px;
   p {
     width: inherit;
     text-align: center;
@@ -86,11 +96,11 @@ div.image-left {
   }
 }
 
-.image-right {
-  float: right;
-  padding-left: 15px;
-  padding-bottom: 15px;
+figure.image-right {
+  @extend figure.image-left;
+  @extend img.image-right;
 }
+
 
 b, .bold {
   font-weight: 600;
@@ -104,23 +114,45 @@ b, .bold {
   font-style: italic;
 }
 
-.list-with-information {
-  ul {
-    margin-bottom: $margin-bottom*2;
-    li {
-      // No margin on the first child
-      p:first-child {
-        margin-bottom: 0;
+
+ul {
+  margin-bottom: $margin-bottom;
+  margin-left: $margin-bottom;
+  li {
+    background: url('/media/images/green-bullet.png') no-repeat 2px 12px;
+    padding-left: 14px;
+    font-family: $palatino;
+    font-size: 1.125em;
+    line-height: 1.75em;
+    p {
+      // This makes it such that paragraphs within lists don't cause
+      // CSS's cascading font-size with ems to make the text too big.
+      font-size: 100%;
+      line-height: 1.75em;
+    }
+    ul {
+      li {
+        // Ensure nested lists maintain correct font size
+        font-size: 100%
       }
-      // All but the first paragraph (and tables) should be indented
-      p:not(:first-child), table {
-        margin-left: 2em;
-      }
-      // All intermediary paragraphs should have a small margin
-      p:not(:first-child):not(:last-child) {
-        margin-bottom: $margin-bottom/2;
-      }
+    }
+    
+    // No margin on the first child
+    p:first-child {
+      margin-bottom: 0;
+    }
+    
+    // All but the first paragraph (and tables) should be indented
+    p:not(:first-child), table {
+      margin-left: 2em;
+    }
+    
+    // All intermediary paragraphs should have a small margin
+    p:not(:first-child):not(:last-child) {
+      margin-bottom: $margin-bottom/2;
     }
   }
 }
+
+
 

@@ -159,32 +159,33 @@ em, i {
   font-style: italic;
 }
 
-ul {
-  margin-bottom: $margin-bottom;
-  margin-left: $margin-bottom;
-  li {
-    background: url('/media/images/green-bullet.png') no-repeat 2px 12px;
-    padding-left: 14px;
-    font-family: $palatino;
-    font-size: 1.125em;
-    line-height: 1.75em;
-    p {
-      // This makes it such that paragraphs within lists don't cause
-      // CSS's cascading font-size with ems to make the text too large.
-      font-size: 100%;
-      line-height: 1.75em;
-    }
-    ul {
-      li {
-        // Ensure nested lists maintain correct font size
-        font-size: 100%
-      }
-    }
-  }
-}
+//ul {
+//  margin-bottom: $margin-bottom;
+//  margin-left: $margin-bottom;
+//  li {
+//    background: url('/media/images/green-bullet.png') no-repeat 2px 12px;
+//    padding-left: 14px;
+//    font-family: $palatino;
+//    font-size: 1.125em;
+//    line-height: 1.75em;
+//    p {
+//      // This makes it such that paragraphs within lists don't cause
+//      // CSS's cascading font-size with ems to make the text too large.
+//      font-size: 100%;
+//      line-height: 1.75em;
+//    }
+//    ul {
+//      li {
+//        // Ensure nested lists maintain correct font size
+//        font-size: 100%
+//      }
+//    }
+//  }
+//}
 
 table {
   margin-top: $margin-bottom/2;
+  margin-bottom: $margin-bottom;
 }
 
 th, td {
@@ -326,7 +327,7 @@ article {
 }
 
 #comments_omitted {
-  @extends #comments;
+  @extend #comments;
   display: none;
   font-style: italic;
 }
