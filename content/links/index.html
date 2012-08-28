@@ -3,7 +3,7 @@ title: Resources
 date: July 20, 2012
 ---
 
-{% filter markdown %}
+{% filter markdown|typogrify %}
 
 # Resources
 
@@ -15,15 +15,12 @@ Instead of using a service such a [Delicious][], I decided to curate a list on m
 
 The list is still relatively short at this time, so I have left it all on a single page.  Soon enough I will design a way to pull each section apart to allow for the links to be more browsable!
 
-{% endfilter %}
-
-<div class="list-with-information">
-{% filter markdown %}
 {% include "/links/git.html" %}
 {% include "/links/database.html" %}
 {% include "/links/design.html" %}
 {% include "/links/javascript.html" %}
 {% include "/links/html.html" %}
+
 {% endfilter %}
-</div>
+
 
