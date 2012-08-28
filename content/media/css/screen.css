@@ -165,12 +165,18 @@ b, .bold {
   font-style: italic;
 }
 
-/* line 118, sass/base.scss */
+/* line 117, sass/base.scss */
+.amp {
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-style: italic;
+}
+
+/* line 123, sass/base.scss */
 ul {
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
-/* line 121, sass/base.scss */
+/* line 126, sass/base.scss */
 ul li {
   background: url("/media/images/green-bullet.png") no-repeat 2px 12px;
   padding-left: 14px;
@@ -178,24 +184,24 @@ ul li {
   font-size: 1.125em;
   line-height: 1.75em;
 }
-/* line 127, sass/base.scss */
+/* line 132, sass/base.scss */
 ul li p {
   font-size: 100%;
   line-height: 1.75em;
 }
-/* line 134, sass/base.scss */
+/* line 139, sass/base.scss */
 ul li ul li {
   font-size: 100%;
 }
-/* line 141, sass/base.scss */
+/* line 146, sass/base.scss */
 ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 146, sass/base.scss */
+/* line 151, sass/base.scss */
 ul li p:not(:first-child), ul li table {
   margin-left: 2em;
 }
-/* line 151, sass/base.scss */
+/* line 156, sass/base.scss */
 ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }
