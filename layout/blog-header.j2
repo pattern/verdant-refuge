@@ -5,7 +5,7 @@
       <span class="timeago" title="{{ res.meta.created }}"></span>.
       &nbsp;&nbsp;&nbsp;
       {% for tag in res.meta.tags -%}
-        <a href="/writing/tags/#{{ tag }}">{{ tag }}</a>{% if loop.last %}.{% else %},{% endif %}
+        <a href="/writing/tags/#{{ tag }}" title="Articles tagged with: {{ tag }}">{{ tag }}</a>{% if loop.last %}.{% else %},{% endif %}
       {% endfor %}
     </p>
   {% endif %}
