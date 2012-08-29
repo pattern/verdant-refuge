@@ -1,7 +1,30 @@
+{#  Render Social List
+
+    Used to display a comma-separated list of all the social links
+    enumerated in the `social` context variable in site.yaml.
+#}
 {% macro render_social_list() -%}
   {% for social_item in social -%}
     {% if loop.last %}and {% endif -%}
     [{{ social_item.name }}]({{ social_item.link }} "{{ social_item.title}}")
     {%- if loop.last %}.{% else %}, {% endif %}
   {%- endfor %}
+{%- endmacro %}
+
+
+{#  Render Figure
+
+    This macro is used to insert <figure>s into paragraphs.  The only
+    required arguments are the `title` and `url` of the image.  The
+    `width` and `loc` can be adjusted as well.
+#}
+{% macro render_figure(title, url, width=140, loc='left') -%}
+  <figure class="{{ loc }}" style="width: {{ width }}px">
+    <a href="{{ url }}" title="{{ title }}">
+      <img src="{{ url }}" alt="{{ title }}" />
+    </a>
+    <figcaption>
+      {{ title }}
+    </figcaption>
+  </figure>
 {%- endmacro %}
