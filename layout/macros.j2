@@ -20,8 +20,8 @@
 #}
 {% macro render_figure(title, url, width=140, loc='left') -%}
   <figure class="{{ loc }}" style="width: {{ width }}px">
-    <a href="{{ url }}" title="{{ title }}">
-      <img src="{{ url }}" alt="{{ title }}" />
+    <a href="{{ resource.full_url }}{{ url }}" title="{{ title }}">
+      <img src="{{ resource.full_url }}{{ url }}" alt="{{ title }}" />
     </a>
     <figcaption>
       {{ title }}
