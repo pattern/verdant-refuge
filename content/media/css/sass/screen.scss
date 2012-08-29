@@ -70,6 +70,12 @@ p.update:last-child {
   margin-bottom: 0;
 }
 
+figcaption {
+  font-family: $palatino;
+  font-size: .85em;
+  line-height: 1.25em;
+}
+
 button {
   @include fancy-button(lighten($green, 25%), .8em, .8em);
   font-weight: 300;

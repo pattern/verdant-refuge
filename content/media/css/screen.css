@@ -125,64 +125,58 @@ img.right, figure.right {
 /* Two classes to position <figure>s in articles: */
 /* line 76, sass/base.scss */
 figure.left, figure.right {
-  width: 140px;
   border: 3px solid #f0f0f0;
   padding: 3px;
 }
-/* line 81, sass/base.scss */
-figure.left p, figure.right p {
+/* line 80, sass/base.scss */
+figure.left a, figure.right a {
   width: inherit;
-  text-align: center;
+}
+/* line 82, sass/base.scss */
+figure.left a img, figure.right a img {
+  width: inherit;
   margin-bottom: 0.625em;
-  font-size: .85em;
-  line-height: 1.25em;
 }
 /* line 87, sass/base.scss */
-figure.left p a, figure.right p a {
+figure.left figcaption, figure.right figcaption {
   width: inherit;
-}
-/* line 89, sass/base.scss */
-figure.left p a img, figure.right p a img {
-  width: inherit;
-}
-/* line 94, sass/base.scss */
-figure.left p:last-child, figure.right p:last-child {
-  margin-bottom: 0;
+  text-align: center;
 }
 
-/* line 99, sass/base.scss */
+/* line 93, sass/base.scss */
 figure.right {
   /* Obtain all the figure styling */
   /* And the correct position and margin */
 }
 
-/* line 105, sass/base.scss */
+/* line 99, sass/base.scss */
 b, .bold {
   font-weight: 600;
 }
 
-/* line 109, sass/base.scss */
+/* line 103, sass/base.scss */
 .grey {
   color: #999999;
 }
 
-/* line 113, sass/base.scss */
+/* line 107, sass/base.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 117, sass/base.scss */
+/* line 111, sass/base.scss */
 .amp {
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-style: italic;
+  opacity: 0.8;
 }
 
-/* line 123, sass/base.scss */
+/* line 118, sass/base.scss */
 ul {
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
-/* line 126, sass/base.scss */
+/* line 121, sass/base.scss */
 ul li {
   background: url("/media/images/green-bullet.png") no-repeat 2px 12px;
   padding-left: 14px;
@@ -190,24 +184,24 @@ ul li {
   font-size: 1.125em;
   line-height: 1.75em;
 }
-/* line 132, sass/base.scss */
+/* line 127, sass/base.scss */
 ul li p {
   font-size: 100%;
   line-height: 1.75em;
 }
-/* line 139, sass/base.scss */
+/* line 134, sass/base.scss */
 ul li ul li {
   font-size: 100%;
 }
-/* line 146, sass/base.scss */
+/* line 141, sass/base.scss */
 ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 151, sass/base.scss */
+/* line 146, sass/base.scss */
 ul li p:not(:first-child), ul li table {
   margin-left: 2em;
 }
-/* line 156, sass/base.scss */
+/* line 151, sass/base.scss */
 ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }
@@ -299,6 +293,13 @@ p.update:last-child {
 }
 
 /* line 73, sass/screen.scss */
+figcaption {
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-size: .85em;
+  line-height: 1.25em;
+}
+
+/* line 79, sass/screen.scss */
 button {
   -webkit-border-radius: 0.8em;
   -moz-border-radius: 0.8em;
@@ -366,7 +367,7 @@ button:active, button:active:visited {
   color: #222222;
 }
 
-/* line 78, sass/screen.scss */
+/* line 84, sass/screen.scss */
 code {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -381,7 +382,7 @@ code {
   white-space: nowrap;
 }
 
-/* line 89, sass/screen.scss */
+/* line 95, sass/screen.scss */
 div.codehilite pre, pre {
   overflow-x: auto;
   display: block;
@@ -393,13 +394,13 @@ div.codehilite pre, pre {
   line-height: 1.75em;
   padding: 10px;
 }
-/* line 100, sass/screen.scss */
+/* line 106, sass/screen.scss */
 div.codehilite pre code, pre code {
   color: #444;
   font-size: 1em;
 }
 
-/* line 106, sass/screen.scss */
+/* line 112, sass/screen.scss */
 blockquote {
   background: #ecfaf2;
   padding: 10px;
@@ -409,12 +410,12 @@ blockquote {
   border-left-width: 8px;
 }
 
-/* line 115, sass/screen.scss */
+/* line 121, sass/screen.scss */
 blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* line 119, sass/screen.scss */
+/* line 125, sass/screen.scss */
 blockquote span {
   display: block;
   font-family: 'HelveticaNeue';
@@ -423,49 +424,49 @@ blockquote span {
   color: #555;
 }
 
-/* line 127, sass/screen.scss */
+/* line 133, sass/screen.scss */
 a, a:visited {
   color: #31b66a;
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
 }
 
-/* line 133, sass/screen.scss */
+/* line 139, sass/screen.scss */
 a:hover, a:active {
   color: #268e53;
   border-bottom: 1px solid #bbb;
 }
 
-/* line 140, sass/screen.scss */
+/* line 146, sass/screen.scss */
 a img, a:visited img {
   border: none;
   vertical-align: top;
 }
 
-/* line 147, sass/screen.scss */
+/* line 153, sass/screen.scss */
 h1.title a, h1.title a:visited, h1.title a:hover, h1.title a:active, h1 a, h1 a:visited, h1 a:hover, h1 a:active, h2 a, h2 a:visited, h2 a:hover, h2 a:active, h3 a, h3 a:visited, h3 a:hover, h3 a:active, h4 a, h4 a:visited, h4 a:hover, h4 a:active {
   color: #333;
   text-decoration: none;
   border-bottom-width: 0;
 }
 
-/* line 154, sass/screen.scss */
+/* line 160, sass/screen.scss */
 strong, b {
   font-weight: 600;
 }
 
-/* line 158, sass/screen.scss */
+/* line 164, sass/screen.scss */
 em, i {
   font-style: italic;
 }
 
-/* line 186, sass/screen.scss */
+/* line 192, sass/screen.scss */
 table {
   margin-top: 0.625em;
   margin-bottom: 1.25em;
 }
 
-/* line 191, sass/screen.scss */
+/* line 197, sass/screen.scss */
 th, td {
   background: #b0eac9;
   line-height: 1em;
@@ -473,17 +474,17 @@ th, td {
   border-bottom: 1px solid white;
 }
 
-/* line 198, sass/screen.scss */
+/* line 204, sass/screen.scss */
 th:not(:last-child), td:not(:last-child) {
   border-right: 1px solid white;
 }
 
-/* line 202, sass/screen.scss */
+/* line 208, sass/screen.scss */
 td {
   background: #ecfaf2;
 }
 
-/* line 206, sass/screen.scss */
+/* line 212, sass/screen.scss */
 ul.tags {
   *zoom: 1;
   margin-bottom: 0;
@@ -494,51 +495,51 @@ ul.tags:after {
   display: table;
   clear: both;
 }
-/* line 209, sass/screen.scss */
+/* line 215, sass/screen.scss */
 ul.tags li {
   display: inline;
   float: left;
   margin-right: 1em;
 }
 
-/* line 217, sass/screen.scss */
+/* line 223, sass/screen.scss */
 body > header {
   min-width: 47.75em;
   background-color: #ecfaf2;
 }
-/* line 220, sass/screen.scss */
+/* line 226, sass/screen.scss */
 body > header #header_inner {
   width: 43.75em;
   margin: 0px auto;
   padding: 2em;
   margin-bottom: 2.5em;
 }
-/* line 224, sass/screen.scss */
+/* line 230, sass/screen.scss */
 body > header #header_inner h1 {
   /* text-shadow: 0px 2px 0px #fff; */
   font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   margin-bottom: .5em;
 }
-/* line 229, sass/screen.scss */
+/* line 235, sass/screen.scss */
 body > header #header_inner h1 a {
   border-bottom: none;
 }
-/* line 232, sass/screen.scss */
+/* line 238, sass/screen.scss */
 body > header #header_inner h1 span {
   color: #aaa;
 }
-/* line 235, sass/screen.scss */
+/* line 241, sass/screen.scss */
 body > header #header_inner h1 span:first-child {
   color: #31b66a;
   font-weight: bold;
 }
-/* line 240, sass/screen.scss */
+/* line 246, sass/screen.scss */
 body > header #header_inner p {
   margin: 0;
 }
 
-/* line 246, sass/screen.scss */
+/* line 252, sass/screen.scss */
 #header_inner_2 {
   *zoom: 1;
 }
@@ -549,14 +550,14 @@ body > header #header_inner p {
   clear: both;
 }
 
-/* line 250, sass/screen.scss */
+/* line 256, sass/screen.scss */
 #title {
   display: inline;
   float: left;
   width: 21.875em;
   margin-right: 4em;
 }
-/* line 254, sass/screen.scss */
+/* line 260, sass/screen.scss */
 #title div {
   display: inline;
   float: left;
@@ -564,20 +565,20 @@ body > header #header_inner p {
   height: 60px;
   margin-right: 15px;
 }
-/* line 260, sass/screen.scss */
+/* line 266, sass/screen.scss */
 #title img {
   width: 58px;
   height: 58px;
   border: 1px solid #aaa;
 }
 
-/* line 267, sass/screen.scss */
+/* line 273, sass/screen.scss */
 #nav {
   display: inline;
   float: left;
   width: 17.875em;
 }
-/* line 270, sass/screen.scss */
+/* line 276, sass/screen.scss */
 #nav ul {
   *zoom: 1;
   margin: .7em 0 0 0;
@@ -588,7 +589,7 @@ body > header #header_inner p {
   display: table;
   clear: both;
 }
-/* line 273, sass/screen.scss */
+/* line 279, sass/screen.scss */
 #nav ul li {
   background: none;
   padding-left: 0;
@@ -597,7 +598,7 @@ body > header #header_inner p {
   width: 6em;
   margin-bottom: 1em;
 }
-/* line 280, sass/screen.scss */
+/* line 286, sass/screen.scss */
 #nav ul li a {
   display: block;
   text-align: center;
@@ -605,28 +606,28 @@ body > header #header_inner p {
   background: #c4efd6;
   border-bottom-width: 0px;
 }
-/* line 287, sass/screen.scss */
+/* line 293, sass/screen.scss */
 #nav ul li a:hover {
   background: #a8e8c3;
 }
-/* line 290, sass/screen.scss */
+/* line 296, sass/screen.scss */
 #nav ul li a:active {
   position: relative;
   top: 2px;
 }
-/* line 295, sass/screen.scss */
+/* line 301, sass/screen.scss */
 #nav ul li:nth-child(2n+1) {
   margin-right: 2em;
 }
 
-/* line 301, sass/screen.scss */
+/* line 307, sass/screen.scss */
 #main {
   width: 43.75em;
   margin: 0px auto;
   padding: 0em 2em;
 }
 
-/* line 306, sass/screen.scss */
+/* line 312, sass/screen.scss */
 footer {
   width: 43.75em;
   margin: 0px auto;
@@ -634,19 +635,19 @@ footer {
   margin-bottom: 2em;
   border-top: 4px solid #eee;
 }
-/* line 312, sass/screen.scss */
+/* line 318, sass/screen.scss */
 footer p {
   text-align: center;
   font-size: 0.875em;
   line-height: 1.15em;
 }
 
-/* line 319, sass/screen.scss */
+/* line 325, sass/screen.scss */
 article {
   margin-bottom: 1.875em;
 }
 
-/* line 323, sass/screen.scss */
+/* line 329, sass/screen.scss */
 #comments, #comments_omitted {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -657,7 +658,7 @@ article {
   padding: 15px;
 }
 
-/* line 329, sass/screen.scss */
+/* line 335, sass/screen.scss */
 #comments_omitted {
   display: none;
   font-style: italic;

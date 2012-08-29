@@ -75,24 +75,18 @@ img.right {
 
 figure.left {
   @extend img.left;
-  width: 140px;
   border: 3px solid #f0f0f0;
   padding: 3px;
-  p {
+  a {
     width: inherit;
-    text-align: center;
-    margin-bottom: $margin-bottom/2;
-    font-size: .85em;
-    line-height: 1.25em;
-    a {
+    img {
       width: inherit;
-      img {
-        width: inherit;
-      } 
+      margin-bottom: $margin-bottom/2;
     }
   }
-  p:last-child {
-    margin-bottom: 0;
+  figcaption {
+    width: inherit;
+    text-align: center;
   }
 }
 
@@ -117,6 +111,7 @@ b, .bold {
 .amp {
   font-family: $palatino;
   font-style: italic;
+  opacity: 0.8;
 }
 
 
