@@ -31,7 +31,7 @@ h1.title {
 h2 {
   font-family: $helvetica-neue-condensed-bold;
   font-size: 1.3em;
-  font-weight: 500;
+  font-weight: 900;
   margin: $margin-bottom*1.25 0 $margin-bottom/2 0;
 }
 
@@ -45,6 +45,7 @@ p {
 p.dateline, span.dateline {
   @include legibility;
   font-family: $helvetica-neue-bold;
+  font-weight: 900;
   letter-spacing: .15em;
   text-transform: uppercase;
   font-size: .75em;
