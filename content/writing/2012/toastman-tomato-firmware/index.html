@@ -95,15 +95,20 @@ The pie charts to the left show a snapshot of my traffic while I am streaming a 
 
 I was easily able to get both routers talking to each other via WDS by simply following the instructions given. I can walk from one corner of the property to another and my wireless devices will seamlessly transition from one router to the other due to the multicast rates set.  Even with four people simultaneously using bandwidth-intensive applications--web browsing is still smooth as silk! I can monitor the bandwidth used, and make sure I don't get close to [Comcast's undocumented 250GB cap][comcast-cap]. Everything seems to Just Work&trade; in a way that I have never experienced before with proprietary router firmware.
 
+[comcast-cap]: http://news.ycombinator.com/item?id=2759648 "Hacker News discussion about Comcast's 250GB bandwidth limit"
+
 {{ macros.render_figure(
     'Tomato Advanced Wireless Settings',
     'tomato-wireless-settings.png',
     loc='right')
 }}
 
-My networking-fu is stronger than before, and I realize there is still much to learn. The chart at the right shows one page of advanced wireless settings which will take weeks of tinkering to exhaust, but should yield more illuminating/esoteric knowledge!
+My networking-fu is stronger than before, and I realize there is still much to learn. The chart at the right shows one page of advanced wireless settings which will take weeks of tinkering to exhaust, but should yield more illuminating/esoteric knowledge! Check out [this list of settings][tomato-options] for a comprehensive description of every Tomato option.
 
-[comcast-cap]: http://news.ycombinator.com/item?id=2759648 "Hacker News discussion about Comcast's 250GB bandwidth limit"
+[tomato-options]: http://www.example.com/ "Tomato Firmware Configuration Settings"
+
+I would recommend anyone comfortable with flashing firmware to give Tomato a try, specifically the Toastman version. It is regularly updated by an active maintainer, provides tons functionality with minimal fuss, all with a very usable interface--and you will likely learn something to boot!
+
 
 ## Further Reading / Functionality
 
