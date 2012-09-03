@@ -60,9 +60,11 @@
     </div>
   </header>
   <div id="main" role="main">
-    {% mark content %}
-    {% block content %}{% endblock content%}
-    {% endmark %}
+
+    {% mark content -%}
+    {% block content %}{% endblock content %}
+    {%- endmark %}
+
   </div>
   <footer>
     {%- filter markdown|typogrify -%}
