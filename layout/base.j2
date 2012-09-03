@@ -3,21 +3,7 @@
   {% block starthead %}
   {% endblock starthead %}
   <meta charset="{{ resource.meta.charset }}">
-
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-       Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="{{ resource.meta.compatibility }}">
-
-  <!-- encoding must be specified within the first 512 bytes
-        www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
-
-  <!-- meta element for compatibility mode needs to be before
-        all elements except title & meta
-        msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx -->
-  <!-- Chrome Frame is only invoked if meta element for
-        compatibility mode is within the first 1K bytes
-        code.google.com/p/chromium/issues/detail?id=23003 -->
-
   <title>{% block title %}{{ resource.meta.title }} | Verdant Refuge ☘{% endblock %}</title>
   <meta name="description" content="{% if resource.meta.tagline -%}
                                       {{ resource.meta.tagline }}
@@ -25,26 +11,14 @@
                                       {{ resource.meta.description }}
                                     {%- endif %}">
   <meta name="author" content="{{ resource.meta.author }}">
-
-  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="{{ resource.meta.viewport }}">
-
-  <!-- Place favicon.ico & apple-touch-icon.png
-        in the root of your domain and delete these references -->
 
   {% block css %}
   <link rel="stylesheet" href="{{ media_url('css/screen.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   {% endblock css %}
 
-  {% block headjs %}
-  <!-- All JavaScript at the bottom, except for Modernizr which
-        enables HTML5 elements & feature detects -->
-    <script src="{{ media_url('js/libs/modernizr-2.5.3.min.js') }}"></script>
-  {% endblock headjs %}
-  
-  {% block endhead %}
-  {% endblock endhead %}
+  <script src="{{ media_url('js/libs/modernizr-2.5.3.min.js') }}"></script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -91,15 +65,11 @@
     {% endmark %}
   </div>
   <footer>
-    <p>
-{% filter markdown|typogrify %}
-
-I'm also on
-{% import "macros.j2" as macros with context %}
-{{ macros.render_social_list() }}
-
-{% endfilter %}
-    </p>
+    {%- filter markdown|typogrify -%}
+      I'm also on
+      {% import "macros.j2" as macros with context %}
+      {{ macros.render_social_list() }}
+    {%- endfilter -%}
     <p>Copyright &copy; 2012 Jeff Pickelman.</p>
   </footer>
   
