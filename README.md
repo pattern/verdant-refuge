@@ -56,6 +56,10 @@ site, and a description of what they are used for.
 -   **TextlinksPlugin** - This simply gives you a more concise way to
     link to both content urls, and media urls.
 
+## Todo
+
+-   Need a `apple-touch-icon.png` in the base directory.
+
 ## Known Bugs
 
 -   **jQuery.timeago** (9/27/2012): The jquery.timeago.js plugin
