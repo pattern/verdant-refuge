@@ -639,13 +639,17 @@ footer p {
   font-size: 0.875em;
   line-height: 1.15em;
 }
+/* line 324, sass/screen.scss */
+footer p:first-child {
+  margin-top: 2em;
+}
 
-/* line 326, sass/screen.scss */
+/* line 329, sass/screen.scss */
 article {
   margin-bottom: 1.875em;
 }
 
-/* line 330, sass/screen.scss */
+/* line 333, sass/screen.scss */
 #comments, #comments_omitted {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -657,7 +661,7 @@ article {
   margin-top: 30px;
 }
 
-/* line 337, sass/screen.scss */
+/* line 340, sass/screen.scss */
 #comments_omitted {
   display: none;
   font-style: italic;
