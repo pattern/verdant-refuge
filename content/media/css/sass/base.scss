@@ -28,6 +28,7 @@ $helvetica-neue-condensed-bold: "HelveticaNeue-CondensedBold", "Helvetica Neue B
 $helvetica-neue-condensed-black: "HelveticaNeue-CondensedBlack", "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
 $palatino: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 $monaco: Monaco, Courier, "Courier New", monospace;
+$ampersand: Baskerville, 'Goudy Old Style',Palatino,'Book Antiqua',serif;
 
 /* Colors */
 $green: #31b66a;
@@ -109,9 +110,10 @@ b, .bold {
 }
 
 .amp {
-  font-family: $palatino;
+  font-family: $ampersand;
   font-style: italic;
   opacity: 0.8;
+  padding: 0 1px;
 }
 
 
@@ -124,6 +126,7 @@ ul {
     font-family: $palatino;
     font-size: 1.125em;
     line-height: 1.75em;
+    margin-bottom: $margin-bottom/2;
     p {
       // This makes it such that paragraphs within lists don't cause
       // CSS's cascading font-size with ems to make the text too big.

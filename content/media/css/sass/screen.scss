@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @include single-transition(all, .2s, linear);  // ease-in-out
+  // @include single-transition(all, .2s, linear);  // ease-in-out
   min-width: $total-width;
   border-top: .5em solid $green;
   font-family: $helvetica-neue;
@@ -331,6 +331,7 @@ article {
   @include border-radius(5px);
   background: #f3f3f3;
   padding: 15px;
+  margin-top: 30px;
 }
 
 #comments_omitted {
