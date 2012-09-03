@@ -1,10 +1,15 @@
 <header>
   {% if res.meta.date %}
     <p class="dateline">
+      {{ res.meta.date }},
+      <time class="timeago" datetime="{{ res.meta.created }}" pubdate="pubdate">{{ res.meta.created }}</time>
+      &nbsp;&nbsp;&nbsp;
+      {# Previous timeago span - still need to iron this out and test
       <time datetime="{{ res.meta.created }}" pubdate="pubdate">{{ res.meta.date }}</time>,
       <span class="timeago" title="{{ res.meta.created }}"></span>.
       &nbsp;&nbsp;&nbsp;
-      {% for tag in res.meta.tags -%}
+      #}
+      {% for tag in res.meta.tags %}
         <a href="/writing/tags/#{{ tag }}" title="Articles tagged with: {{ tag }}">{{ tag }}</a>{% if loop.last %}.{% else %},{% endif %}
       {% endfor %}
     </p>
