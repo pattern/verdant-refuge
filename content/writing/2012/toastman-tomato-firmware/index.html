@@ -13,46 +13,68 @@ tags:
 
 I recently moved into a new house that I share with 3 other people.  As a web developer and general internet enthusiast, I needed a way to make sure a couple of people simultaneously streaming Netflix and Hulu plus some Pandora and stray downloading thrown in would not diminish my ability to <s>constantly refresh Hacker News</s> Get Things Done&trade;.
 
-I stumbled upon the concept of [Quality of Service][qos-wikipedia] (QoS) while reading Jeff Atwood's eye-opening post on the wonders of [open source firmware on commodity hardware][coding-horror-1].  QoS allows you to apply classification rules to all traffic through your router, and limit the incoming or outgoing bandwidth available to each type of traffic.  It can also prioritize [SYN, FIN, and RST packets][tcp-wikipedia] for snappy TCP performance.
+I stumbled upon the concept of [Quality of Service][qos-wikipedia] (QoS) while reading Jeff Atwood's eye-opening post on the wonders of [open source firmware on commodity hardware][coding-horror-1]. QoS allows you to apply classification rules to all traffic through your router, and limit the incoming or outgoing bandwidth available to each type of traffic. It can also prioritize [SYN, FIN, and RST packets][tcp-wikipedia] for snappy TCP performance.
 
 [coding-horror-1]: http://www.codinghorror.com/blog/2012/06/because-everyone-still-needs-a-router.html "Because Everyone (Still) Needs a Router"
 [tcp-wikipedia]: http://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure "Wikipedia: Transmission Control Protocol"
 
 ## Research
 
-I decided I take the dive and started researching the different firmware options.  Three stood out: [DD-WRT][dd-wrt], [OpenWrt][openwrt], and [Tomato][tomato-wikipedia].
+I decided I take the dive and started researching the different firmware options. Three stood out: [DD-WRT][dd-wrt], [OpenWrt][openwrt], and [Tomato][tomato-wikipedia].
 
 [dd-wrt]: http://www.dd-wrt.com/site/index "DD-WRT Linux-Based Open Source Firmware"
 [openwrt]: https://openwrt.org/ "OpenWrt Linux-based Firmware"
 [tomato-wikipedia]: http://en.wikipedia.org/wiki/Tomato_(firmware) "Wikipedia: Tomato Firmware"
 
-**DD-WRT** appears to be a one-size-fits-all package with a large forum presence and a broad range of supported hardware.  It appears to be one of the oldest firmwares available, and as such there is a wealth of documentation/tutorials/forum-postings - albeit sometimes outdated.
+**DD-WRT** appears to be a one-size-fits-all package with a large forum presence and a broad range of supported hardware. It appears to be one of the oldest of the available firmware, and as such there is a wealth of documentation/tutorials/forum-postings - albeit some things will be outdated.
 
-**OpenWrt** takes a more built-to-order approach in that it aims to provide a smorgasbord of packages.  The user can pick and choose which functionality they need and build a custom firmware to their specifications.  This approach appeals to me, but alas, I needed a quick solution.  In the future I may revisit OpenWrt and see how the package management works in practice.
+**OpenWrt** takes a more built-to-order approach in that it aims to provide a smorgasbord of packages. The user can pick and choose which functionality they need and build a custom firmware to their specifications. This approach appeals to me, but alas, I needed a quick solution. In the future I may revisit OpenWrt and see how the package management works in practice.
 
-**Tomato** proper was last updated in June of 2010, but there is an active community with roughly ten individuals maintaining their own branches, and making releases with different subsets of features available.  Check out the [feature comparison table][tomato-features-wikipedia].  I zeroed in on the "Toastman" version of Tomato mainly because there was a [wealth of information][toastman-links] listed on Toastman's website.
+**Tomato** proper was last updated in June of 2010, but there is an active community with roughly ten individuals maintaining their own branches, and making releases with different subsets of features available. Check out the [feature comparison table][tomato-features-wikipedia]. I zeroed in on the "Toastman" version of Tomato mainly because there was a [wealth of information][toastman-links] listed on Toastman's website.
 
 [tomato-features-wikipedia]: http://en.wikipedia.org/wiki/Tomato_(firmware)#Feature_comparison "Wikipedia: Tomato Feature Comparison"
 [toastman-links]: http://toastmanfirmware.yolasite.com/common-tomato-topics.php "Toastman Tomato - List of Common Tomato Topics"
 
+## Tomato
+
+Here is a sampling of the wonders within _Toastman Tomato_:
+
+-   **QoS Classification** grants a better idea of what traffic is
+    being handled
+-   Real-time **bandwidth** analysis, by IP address
+-   **Wireless Distribution System (WDS)** allows you to link together
+    routers to use the same SSID for seamless transition
+-   Adjustable **multicast rate** --- this helps force the hand of
+    clingy devices to use the strongest signal available to them
+-   Adjustable **transmit power** --- this allows you to fine-tune
+    signal overlap and coverage
+-   **Overclock** the router CPU --- how cool is this?!
+-   CPU **load averages**, RAM usage, and NVRAM space monitoring
+-   **OpenVPN server** so that you can access your network externally
+-   **VLANs** in case you are one of those crazy "I want to manage a
+    complicated IT infrastructure at work AND at home" kind of guys!
+-   Share **printers** and **NAS devices** connected via USB
+
+
+
 ## Hardware
 
-![Linksys WRT54GL Router on a desk]({{ resource.full_url }}linksys-wrt54gl.jpeg "Linksys WRT54GL Router"){: .image-right }
-A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CPU, 16MB RAM, 4MB Flash) willingly gave itself to the cause of being a Tomato guinea pig.  I read a good amount of the links on Toastman's website, as well as some background information on the DD-WRT site (including the all-important [30/30/30 rule][30-30-30], which is to be performed before and after every flash of the NVRAM).  Upgrading from the stock firmware to Tomato went without a hitch.  I spent a good couple of hours poking around and exploring all the options available.
+![Linksys WRT54GL Router on a desk]({{ resource.full_url }}linksys-wrt54gl.jpeg "Linksys WRT54GL Router"){: .right }
+A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CPU, 16MB RAM, 4MB Flash) willingly gave itself to the cause of being a Tomato guinea pig. I read a good amount of the links on Toastman's website, as well as some background information on the DD-WRT site (including the all-important [30/30/30 rule][30-30-30], which is to be performed before and after every flash of the NVRAM). Upgrading from the stock firmware to Tomato went without a hitch. I spent a good couple of hours poking around and exploring all the options available.
 
 [wrt54gl-wikipedia]: http://en.wikipedia.org/wiki/Linksys_WRT54G_series#WRT54GL "Wikipedia: Linksys WRT54GL"
 [30-30-30]: http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30 "Router Hard Reset, or 30/30/30 Rule"
 
-![Belkin Share Max N300+ Router with ports labeled]({{ resource.full_url }}belkin-n300.png "Belkin Share Max N300+ Router"){: .image-left }
-I picked up a Belkin Share Max N300+ router.  With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless - this router is a steal for $25 shipped (from [Expansys][expansys]).  It has a 453MHz CPU, 8MB of flash, and a lofty 64MB of ram.  In initial testing I found it's wireless signal strength to be marginally better than the WRT54GL's, even without external antennae.
+![Belkin Share Max N300+ Router with ports labeled]({{ resource.full_url }}belkin-n300.png "Belkin Share Max N300+ Router"){: .left }
+I picked up a Belkin Share Max N300+ router. With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless--this router is a steal for $26 shipped (from [Expansys][expansys]). It has a 453MHz CPU, 8MB of flash, and a lofty 64MB of ram. In initial testing I found it's wireless signal strength to be marginally stronger than the WRT54GL's, even without any external antennae. I like the simplicity of it's single LED on the front. It's either green (all systems go) or yellow (services restarting, or problem).
 
 [expansys]: http://www.expansys-usa.com/ "Expansys"
 
 ## WDS (Wireless Distribution System)
 
-[WDS][wds-wikipedia] is a way for access points to wirelessly associate with each other.  It allows you to extend your wireless network without having to have a physical ethernet cable connecting your access points.  It is quite simple to set up - you just need to make sure both access points are configured with the same network speed, SSID, channel, security/encyption/key, and you need to explicitly tell each AP the MAC address of the other APs.
+[WDS][wds-wikipedia] is a way for access points to wirelessly associate with each other. It allows you to extend your wireless network without having to have a physical ethernet cable connecting your access points.  It is quite simple to set up--you just need to make sure both access points are configured with the same network speed, SSID, channel, security/encyption/key, and you need to explicitly tell each AP the MAC address of the other APs.
 
-This article describes how to [extend a wireless network with tomato routers][howtogeek]. It was helpful in making sure I understood the basics of what was going on, and verifying I made all the setting changes required.  This post on superuser.com explains [Multi Access Point Networking][multi-ap] and was useful to get my brain fully wrapped around the concepts of wireless networking that I hadn't properly understood before.
+This article describes how to [extend a wireless network with tomato routers][howtogeek]. It was helpful in making sure I understood the basics of what was going on, and verifying I made all the setting changes required. This post on superuser.com explains [Multi Access Point Networking][multi-ap] and was useful to get my brain fully wrapped around the concepts of wireless networking that I hadn't properly understood before.
 
 [wds-wikipedia]: http://en.wikipedia.org/wiki/Wireless_distribution_system "Wikipedia: Wireless distribution system"
 [howtogeek]: http://www.howtogeek.com/104007/how-to-extend-your-wireless-network-with-tomato-powered-routers/ "How To Extend Your Wireless Network with Tomato-Powered Routers"
@@ -60,72 +82,33 @@ This article describes how to [extend a wireless network with tomato routers][ho
 
 ## Quality of Service
 
-<div class="image-left" markdown="1">
-[![QoS Bandwidth Pie Charts][image-1]][image-1]
+{{ macros.render_figure(
+    'Chart 1: QoS Bandwidth (Upload & Download)',
+    'qos-chart.png')
+}}
 
-<!-- {: style="width: 140px;" } -->
-
-QoS Bandwidth Pie Charts (Upload & Download)
-</div>
-[image-1]: {{ resource.full_url }}qos-chart.png "QoS Bandwidth Chart"
-The graphs to the left show a snapshot of my traffic while I am streaming a YouTube video, downloading an application, and browsing with many tabs open.  I can see how the QoS rules are classifying my traffic, and by clicking on either the pie chart or the listing at the left I can drill down and see exactly what connections are active, their source/destination ports and IP addresses, and the total amount of data transferred for each connection.  This is clearly overkill for most, but just KNOWING all that information is there for the gleaning makes me happy.  
+The pie charts to the left show a snapshot of my traffic while I am streaming a YouTube video, downloading an application, and using Chrome with many tabs open. I can see how the QoS rules are classifying my traffic, and by clicking on either the pie chart or the listing at the left I can drill down and see exactly what connections are active, their source/destination ports and IP addresses, and the total amount of data transferred for each connection. This is clearly overkill for most, but just KNOWING all that information is there for the gleaning makes me happy. It's also pushed my understanding of TCP/IP networking and related concepts. Previously I had a VERY simplistic understanding of ports, TCP vs UDP, and TCP control flags.
 
 [qos-wikipedia]: http://en.wikipedia.org/wiki/Quality_of_service "Wikipedia: Quality of Service"
 
+## Conclusion
 
+I was easily able to get both routers talking to each other via WDS by simply following the instructions given. I can walk from one corner of the property to another and my wireless devices will seamlessly transition from one router to the other due to the multicast rates set.  Even with four people simultaneously using bandwidth-intensive applications--web browsing is still smooth as silk! I can monitor the bandwidth used, and make sure I don't get close to [Comcast's undocumented 250GB cap][comcast-cap]. Everything seems to Just Work&trade; in a way that I have never experienced before with proprietary router firmware.
 
+{{ macros.render_figure(
+    'Tomato Advanced Wireless Settings',
+    'tomato-wireless-settings.png',
+    loc='right')
+}}
 
+My networking-fu is stronger than before, and I realize there is still much to learn. The chart at the right shows one page of advanced wireless settings which will take weeks of tinkering to exhaust, but should yield more illuminating/esoteric knowledge!
 
+[comcast-cap]: http://news.ycombinator.com/item?id=2759648 "Hacker News discussion about Comcast's 250GB bandwidth limit"
 
+## Further Reading / Functionality
 
-
-A small sample of the wonders within:
-
--   First
-
-
-
-
-
-
-
-## Goals
-
-- Understand routing and networking at a deeper level.
-    - VPN (PPTP vs OpenVPN)
-    - VLANs
-    - Quality of Service
-    - Subnet masks
-    
-
-
-
-
-- Monitor monthly bandwidth usage to be aware of how close to cap
-- General nerdery (who doens't want to brag about overclocking their ROUTER?)
-
-
-## Further Functionality
-
-- [Setup Usenet client with Optware](http://www.linksysinfo.org/index.php?threads/setup-usenet-client-with-optware.37963/)
-- [How to set up Nas, Optware, etc, FOR TOTAL NOOBS](http://tomatousb.org/tut:how-to-set-up-nas-optware-etc-for-total-noobs)
-
-
-
-
-- Classification allows for better idea of what traffic is being handled
-- Real-time bandwidth analysis, by IP address
-
-
-
-
-
-The story is here: [The Open Source WRT54G Story][wrt54g-story].
-
-[wrt54g-story]: http://www.wi-fiplanet.com/tutorials/article.php/3562391 "The Open Source WRT54G Story"
-
-
-
+-    [Setup Usenet client with Optware](http://www.linksysinfo.org/index.php?threads/setup-usenet-client-with-optware.37963/)
+-    [How to set up Nas, Optware, etc, FOR TOTAL NOOBS](http://tomatousb.org/tut:how-to-set-up-nas-optware-etc-for-total-noobs)
 
 
 
