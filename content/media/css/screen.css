@@ -680,7 +680,7 @@ article {
   }
   /* line 6, sass/media-queries.scss */
   #nav ul li {
-    margin-right: 1em;
+    margin-right: 2em !important;
   }
 }
 @media only print {
