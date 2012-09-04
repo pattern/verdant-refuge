@@ -1,2 +1,5 @@
+---
+extends: blank.j2
+---
 User-Agent: *
 Disallow:
