@@ -28,6 +28,9 @@
   #}
 
   {% if res.meta.tagline -%}
-    <p class="italic">{{ res.meta.tagline }}</p>
+    {%- filter markdown|typogrify -%}
+      {{ res.meta.tagline }}
+      {: .italic }
+    {%- endfilter %}
   {%- endif %}
 </header>
