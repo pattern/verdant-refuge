@@ -112,19 +112,27 @@ div.codehilite pre, pre {
 }
 
 blockquote {
-  background: lighten($green, 50%);
-  padding: 10px;
+  // background: url('/media/images/blockquote.png') no-repeat top left lighten($green, 50%);
+  // padding: 1em 1em 1em 4em;
+  background-color: lighten($green, 50%);
+  padding: 1em;
   font-family: 'HelveticaNeue-LightItalic';
-  margin: 0 1.5em $margin-bottom 1.5em;
-  border: 1px solid lighten($green, 20%);
+  margin: 0 2.5em $margin-bottom 2.5em;
+  border: 1px solid lighten($green, 30%);
   border-left-width: 8px;
+}
+
+blockquote p {
+  text-indent: -0.5em;
+  margin-bottom: $margin-bottom/2;
 }
 
 blockquote p:last-child {
   margin-bottom: 0;
+  text-indent: 0;
 }
 
-blockquote span {
+blockquote em {
   display: block;
   font-family: 'HelveticaNeue';
   text-align: right;
