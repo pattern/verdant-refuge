@@ -26,7 +26,7 @@ I decided I take the dive and started researching the different firmware options
 [openwrt]: https://openwrt.org/ "OpenWrt Linux-based Firmware"
 [tomato-wikipedia]: http://en.wikipedia.org/wiki/Tomato_(firmware) "Wikipedia: Tomato Firmware"
 
-**DD-WRT** appears to be a one-size-fits-all package with a large forum presence and a broad range of supported hardware. It appears to be one of the oldest of the available firmware, and as such there is a wealth of documentation/tutorials/forum-postings --- albeit some things will be outdated.
+**DD-WRT** appears to be a one-size-fits-all package with a large forum presence and a broad range of supported hardware. It appears to be one of the oldest of the available firmware, and as such there is a wealth of documentation/tutorials/forum-postings -- albeit some things will be outdated.
 
 **OpenWrt** takes a more built-to-order approach in that it aims to provide a smorgasbord of packages. The user can pick and choose which functionality they need and build a custom firmware to their specifications. This approach appeals to me, but alas, I needed a quick solution. In the future I may revisit OpenWrt and see how the package management works in practice.
 
@@ -44,11 +44,11 @@ Here is a sampling of the wonders within _Toastman Tomato_:
 -   Real-time **bandwidth** analysis, by IP address
 -   **Wireless Distribution System (WDS)** allows you to link together
     routers to use the same SSID for seamless transition
--   Adjustable **multicast rate** --- this helps force the hand of
+-   Adjustable **multicast rate** -- this helps force the hand of
     clingy devices to use the strongest signal available to them
--   Adjustable **transmit power** --- this allows you to fine-tune
+-   Adjustable **transmit power** -- this allows you to fine-tune
     signal overlap and coverage
--   **Overclock** the router CPU --- how cool is this?!
+-   **Overclock** the router CPU -- how cool is this?!
 -   CPU **load averages**, RAM usage, and NVRAM space monitoring
 -   **OpenVPN server** so that you can access your network externally
 -   **VLANs** in case you are one of those crazy "I want to manage a
@@ -66,13 +66,13 @@ A roughly four year old Linksys [WRT54GL][wrt54gl-wikipedia] (200MHz Broadcom CP
 [30-30-30]: http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30 "Router Hard Reset, or 30/30/30 Rule"
 
 ![Belkin Share Max N300+ Router with ports labeled]({{ resource.full_url }}belkin-n300.png "Belkin Share Max N300+ Router"){: .left }
-I picked up a Belkin Share Max N300+ router. With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless--this router is a steal for $26 shipped (from [Expansys][expansys]). It has a 453MHz CPU, 8MB of flash, and a lofty 64MB of ram. In initial testing I found it's wireless signal strength to be marginally stronger than the WRT54GL's, even without any external antennae. I like the simplicity of it's single LED on the front. It's either green (all systems go) or yellow (services restarting, or problem).
+I picked up a Belkin Share Max N300+ router. With 4 gigabit ethernet ports, 2 USB ports, and 802.11n wireless -- this router is a steal for $26 shipped (from [Expansys][expansys]). It has a 453MHz CPU, 8MB of flash, and a lofty 64MB of ram. In initial testing I found it's wireless signal strength to be marginally stronger than the WRT54GL's, even without any external antennae. I like the simplicity of it's single LED on the front. It's either green (all systems go) or yellow (services restarting, or problem).
 
 [expansys]: http://www.expansys-usa.com/ "Expansys"
 
 ## WDS (Wireless Distribution System)
 
-[WDS][wds-wikipedia] is a way for access points to wirelessly associate with each other. It allows you to extend your wireless network without having to have a physical ethernet cable connecting your access points.  It is quite simple to set up--you just need to make sure both access points are configured with the same network speed, SSID, channel, security/encyption/key, and you need to explicitly tell each AP the MAC address of the other APs.
+[WDS][wds-wikipedia] is a way for access points to wirelessly associate with each other. It allows you to extend your wireless network without having to have a physical ethernet cable connecting your access points.  It is quite simple to set up -- you just need to make sure both access points are configured with the same network speed, SSID, channel, security/encyption/key, and you need to explicitly tell each AP the MAC address of the other APs.
 
 This article describes how to [extend a wireless network with tomato routers][howtogeek]. It was helpful in making sure I understood the basics of what was going on, and verifying I made all the setting changes required. This post on superuser.com explains [Multi Access Point Networking][multi-ap] and was useful to get my brain fully wrapped around the concepts of wireless networking that I hadn't properly understood before.
 
@@ -93,7 +93,7 @@ The pie charts to the left show a snapshot of my traffic while I am streaming a 
 
 ## Conclusion
 
-I was easily able to get both routers talking to each other via WDS by simply following the instructions given. I can walk from one corner of the property to another and my wireless devices will seamlessly transition from one router to the other due to the multicast rates set.  Even with four people simultaneously using bandwidth-intensive applications--web browsing is still smooth as silk! I can monitor the bandwidth used, and make sure I don't get close to [Comcast's undocumented 250GB cap][comcast-cap]. Everything seems to Just Work&trade; in a way that I have never experienced before with proprietary router firmware.
+I was easily able to get both routers talking to each other via WDS by simply following the instructions given. I can walk from one corner of the property to another and my wireless devices will seamlessly transition from one router to the other due to the multicast rates set.  Even with four people simultaneously using bandwidth-intensive applications, web browsing is still smooth as silk! I can monitor the bandwidth used, and make sure I don't get close to [Comcast's undocumented 250GB cap][comcast-cap]. Everything seems to Just Work&trade; in a way that I have never experienced before with proprietary router firmware.
 
 [comcast-cap]: http://news.ycombinator.com/item?id=2759648 "Hacker News discussion about Comcast's 250GB bandwidth limit"
 
