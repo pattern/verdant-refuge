@@ -12,16 +12,18 @@ def serve():
   regen()
   local('hyde serve')
 
-def publish():
-  regen()
-  local('hyde publish -p s3')
-  
+def last_published():
   # Log the most recent commit at time of publishing:
-  filename = 'content/  last-published.txt'
+  filename = 'content/last-published.txt'
   local('rm -f %s' % filename)
   date = "Verdant Refuge was last published: %s" % datetime.now()
   local("git log --pretty=format:'Git: %s (%h, %aD)' -n 1 \
          > %s" % filename)
   local('echo "\n%s" | cat >> %s' % (date, filename))
+
+def publish():
+  last_published()
+  regen()
+  local('hyde publish -p s3')
 
 
