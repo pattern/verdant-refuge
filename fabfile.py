@@ -17,10 +17,11 @@ def publish():
   local('hyde publish -p s3')
   
   # Log the most recent commit at time of publishing:
-  local('rm -f last-published.txt')
-  pub = "Verdant Refuge was last published: %s" % \
-        datetime.now()
+  filename = 'content/  last-published.txt'
+  local('rm -f %s' % filename)
+  date = "Verdant Refuge was last published: %s" % datetime.now()
   local("git log --pretty=format:'Git: %s (%h, %aD)' -n 1 \
-         > last-published.txt")
-  local('echo "\n%s" | cat >> last-published.txt' % pub)
+         > %s" % filename)
+  local('echo "\n%s" | cat >> %s' % (date, filename))
+
 

@@ -3,4 +3,4 @@ proj/
 .sass-cache/
 .hyde_deps
 *.pyc
-last-published.txt
+content/last-published.txt
