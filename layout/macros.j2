@@ -21,7 +21,7 @@
 {% macro render_figure(title, url, width=140, loc='left') -%}
   <figure class="{{ loc }}" style="width: {{ width }}px">
     <a href="{{ resource.full_url }}{{ url }}" title="{{ title }}">
-      <img src="{{ resource.full_url }}{{ url }}" alt="{{ title }}" />
+      <img width="{{ width }}" src="{{ resource.full_url }}{{ url }}" alt="{{ title }}" />
     </a>
     <figcaption>
       {{ title }}
