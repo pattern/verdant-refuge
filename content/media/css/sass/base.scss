@@ -6,6 +6,22 @@
 
 @import "fancy-buttons";
 
+/*
+Content-Type: multipart/related; boundary="MYSEPARATOR"
+ 
+--MYSEPARATOR
+Content-Location: green_bullet
+Content-Transfer-Encoding: base64
+ 
+R0lGODlhBQAFAIAAADG2agAAACH5BAAAAAAALAAAAAAFAAUAAAIEhI+pWAA7
+--MYSEPARATOR
+Content-Location: green_bullet2
+Content-Transfer-Encoding: base64
+ 
+R0lGODlhBQAFAIAAADG2agAAACH5BAAGODAALAAAAAAFAAUAAAIEhI+pWAA7
+--MYSEPARATOR--
+*/
+
 /* Markdown Extra produces tables with the "align" attribute.
    These three rules prevent the inheritied text-align property
    from overriding the correct alignment. */
@@ -121,7 +137,8 @@ ul {
   margin-bottom: $margin-bottom;
   margin-left: $margin-bottom;
   li {
-    background: url('/media/images/green-bullet.png') no-repeat 2px 12px;
+    background: url(data:image/gif;base64,R0lGODlhBQAFAIAAADG2agAAACH5BAAAAAAALAAAAAAFAAUAAAIEhI+pWAA7) no-repeat 2px 12px;
+    *background: url(mhtml:/media/css/screen.css?green_bullet) no-repeat 2px 12px;
     padding-left: 14px;
     font-family: $palatino;
     font-size: 1.125em;

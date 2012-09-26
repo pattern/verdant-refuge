@@ -87,20 +87,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   outline: none;
 }
 
+/*
+Content-Type: multipart/related; boundary="MYSEPARATOR"
+ 
+--MYSEPARATOR
+Content-Location: green_bullet
+Content-Transfer-Encoding: base64
+ 
+R0lGODlhBQAFAIAAADG2agAAACH5BAAAAAAALAAAAAAFAAUAAAIEhI+pWAA7
+--MYSEPARATOR
+Content-Location: green_bullet2
+Content-Transfer-Encoding: base64
+ 
+R0lGODlhBQAFAIAAADG2agAAACH5BAAGODAALAAAAAAFAAUAAAIEhI+pWAA7
+--MYSEPARATOR--
+*/
 /* Markdown Extra produces tables with the "align" attribute.
    These three rules prevent the inheritied text-align property
    from overriding the correct alignment. */
-/* line 12, sass/base.scss */
+/* line 28, sass/base.scss */
 td[align=right] {
   text-align: right;
 }
 
-/* line 16, sass/base.scss */
+/* line 32, sass/base.scss */
 td[align=left] {
   text-align: left;
 }
 
-/* line 20, sass/base.scss */
+/* line 36, sass/base.scss */
 td[align=center] {
   text-align: center;
 }
@@ -108,14 +123,14 @@ td[align=center] {
 /* Font Stacks */
 /* Colors */
 /* Two classes to position <img>s in articles: */
-/* line 62, sass/base.scss */
+/* line 78, sass/base.scss */
 img.left, figure.left, figure.right {
   float: left;
   margin-right: 15px;
   margin-bottom: 15px;
 }
 
-/* line 68, sass/base.scss */
+/* line 84, sass/base.scss */
 img.right, figure.right {
   float: right;
   margin-left: 15px;
@@ -123,48 +138,48 @@ img.right, figure.right {
 }
 
 /* Two classes to position <figure>s in articles: */
-/* line 77, sass/base.scss */
+/* line 93, sass/base.scss */
 figure.left, figure.right {
   border: 3px solid #f0f0f0;
   padding: 3px;
 }
-/* line 81, sass/base.scss */
+/* line 97, sass/base.scss */
 figure.left a, figure.right a {
   width: inherit;
 }
-/* line 83, sass/base.scss */
+/* line 99, sass/base.scss */
 figure.left a img, figure.right a img {
   width: inherit;
   margin-bottom: 0.625em;
 }
-/* line 88, sass/base.scss */
+/* line 104, sass/base.scss */
 figure.left figcaption, figure.right figcaption {
   width: inherit;
   text-align: center;
 }
 
-/* line 94, sass/base.scss */
+/* line 110, sass/base.scss */
 figure.right {
   /* Obtain all the figure styling */
   /* And the correct position and margin */
 }
 
-/* line 100, sass/base.scss */
+/* line 116, sass/base.scss */
 b, .bold {
   font-weight: 600;
 }
 
-/* line 104, sass/base.scss */
+/* line 120, sass/base.scss */
 .grey {
   color: #999999;
 }
 
-/* line 108, sass/base.scss */
+/* line 124, sass/base.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 112, sass/base.scss */
+/* line 128, sass/base.scss */
 .amp {
   font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif;
   font-style: italic;
@@ -172,38 +187,39 @@ b, .bold {
   padding: 0 1px;
 }
 
-/* line 120, sass/base.scss */
+/* line 136, sass/base.scss */
 ul {
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
-/* line 123, sass/base.scss */
+/* line 139, sass/base.scss */
 ul li {
-  background: url("/media/images/green-bullet.png") no-repeat 2px 12px;
+  background: url(data:image/gif;base64,R0lGODlhBQAFAIAAADG2agAAACH5BAAAAAAALAAAAAAFAAUAAAIEhI+pWAA7) no-repeat 2px 12px;
+  *background: url(mhtml:/media/css/screen.css?green_bullet) no-repeat 2px 12px;
   padding-left: 14px;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 1.125em;
   line-height: 1.75em;
   margin-bottom: 0.625em;
 }
-/* line 130, sass/base.scss */
+/* line 147, sass/base.scss */
 ul li p {
   font-size: 100%;
   line-height: 1.75em;
 }
-/* line 137, sass/base.scss */
+/* line 154, sass/base.scss */
 ul li ul li {
   font-size: 100%;
 }
-/* line 144, sass/base.scss */
+/* line 161, sass/base.scss */
 ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 149, sass/base.scss */
+/* line 166, sass/base.scss */
 ul li p:not(:first-child), ul li table {
   margin-left: 2em;
 }
-/* line 154, sass/base.scss */
+/* line 171, sass/base.scss */
 ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }
