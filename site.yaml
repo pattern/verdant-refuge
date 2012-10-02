@@ -52,6 +52,13 @@ sorter:
     filters:
       source.kind: html
       meta.listable: true
+  time_drafts:
+    attr:
+      - meta.created
+    reverse: true
+    filters:
+      source.kind: html
+      meta.listable: false
 # sorter:
 #   name: # the name of the sorter (no pun intended)
 #     attr: name # by which attributes will resources be sorted

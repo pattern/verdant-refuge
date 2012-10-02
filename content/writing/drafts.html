@@ -1,0 +1,13 @@
+---
+extends: base.j2
+default_block: content
+title: Writing (Drafts)
+listable: false
+---
+
+{% for res in resource.node.walk_resources_sorted_by_time_drafts() %}
+  <article>
+    {% include "blog-header.j2" %}
+  </article>
+{% endfor %}
+
