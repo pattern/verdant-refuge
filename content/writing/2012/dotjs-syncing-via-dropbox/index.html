@@ -1,0 +1,49 @@
+---
+title: Syncing dotjs settings with Dropbox
+tagline: This article explains a `dotjs` setup (allowing custom JavaScript on webpages) on both OS X and Windows, and the use of Dropbox to keep them synced.
+date: September 29, 2012
+created: !!timestamp '2012-9-29 10:30:00 -8:00'
+#tags:
+#  - dropbox
+#  - dotjs
+#  - chrome
+listable: false
+---
+
+## The Problem --- Poor Usability
+
+Many webpages have well thought-out designs with proper typographic sizes, line spacing, color choices, and a usable layout. There are still quite a few, however, which struggle with these considerations. Some use minuscule font sizes for body copy, some set line height equal to font size, and some have too little or too much contrast between text and background among other issues.
+
+## The Solution --- dotjs
+
+The **@defunkt**/[dotjs][dotjs] Chrome extension provides a framework with which to solve these problems. It allows you to write a JavaScript file for each domain (named `{domain}.js`) which will be loaded (along with jQuery) whenever you view a page on that domain. 
+
+[dotjs]: https://github.com/defunkt/dotjs "Github Page for defunkt's dotjs Chrome Extension"
+
+## Dropbox
+
+- DotJS is great - but what if you want it on other computers?
+- Dropbox solves the pain point of syncing files
+- Simply have to 
+
+## Setting up dotjs on OS X
+
+- Need rake, follow instructions on defunkt/dotjs
+
+## Setting up dotjs on Windows 7
+
+
+
+- Project at p3lim/dotjs-win **@p3lim**/[dotjs-win][dotjs-win]
+- awkward, have to download the dotjs.cxm or whatever file
+- then navigate to: "chrome://chrome/extensions/"
+- then drag it into the window
+- Following instructions here: http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/  I was able to make a symbolic link 
+
+did:  mklink /J "C:\Users\Jeff\AppData\Local\Google\Chrome\User Data\Default\Extensions\longstringofletters\1.5_0\scripts" C:\Users\Jeff\Dropbox\dotjs
+which then told me "Junction created for {destination} <===> {source}"
+
+[dotjs-win]: https://github.com/p3lim/dotjs-win "Github Page for p3lim's dotjs-win Chrome Extension"
+
+
+
