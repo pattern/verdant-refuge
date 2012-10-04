@@ -12,38 +12,101 @@ listable: false
 
 ## The Problem --- Poor Usability
 
-Many webpages have well thought-out designs with proper typographic sizes, line spacing, color choices, and a usable layout. There are still quite a few, however, which struggle with these considerations. Some use minuscule font sizes for body copy, some set line height equal to font size, and some have too little or too much contrast between text and background among other issues.
+Many webpages have well thought-out designs following typographic best practices, and usable layouts. There are still quite a few, however, which don't fare as well. Some use microscopic font sizes for body copy, some fail to set the [line height][leading-wikipedia], and some have too little or too much contrast between text and background among other issues.
+
+[leading-wikipedia]: http://en.wikipedia.org/wiki/Leading "Wikipedia: Leading"
+
 
 ## The Solution --- dotjs
 
-The **@defunkt**/[dotjs][dotjs] Chrome extension provides a framework with which to solve these problems. It allows you to write a JavaScript file for each domain (named `{domain}.js`) which will be loaded (along with jQuery) whenever you view a page on that domain. 
+The **@defunkt**/[dotjs][dotjs] Chrome extension provides a framework with which to solve these problems. It allows one to write a JavaScript file for each domain (named `{domain}.js`) which will be loaded along with jQuery whenever a page is viewed on that domain. The main use cases are to modify the CSS of elements on the page, and to hide others entirely.
 
 [dotjs]: https://github.com/defunkt/dotjs "Github Page for defunkt's dotjs Chrome Extension"
 
+Want to make all the paragraphs on a page have a large font size, appropriate line height, proper bottom margin, and be dark grey? Put the following into the corresponding JavaScript file:
+
+    :::javascript
+    $('p').css('font-size', '22px')
+          .css('line-height', '32px')
+          .css('margin-bottom', '16px')
+          .css('color', '#333');
+
+Are there unreasonably many ads, HTML popups, or other obnoxious `<div>`s? This should do the trick:
+
+    :::javascript
+    $('#advert_42, .popup, div.flashing').remove();
+
+**Aside**: I use `remove()` instead of `hide()` above as it is roughly [38&times; faster][jsperf-remove-hide] on my current version of Chrome.
+
+[jsperf-remove-hide]: http://jsperf.com/remove-vs-hide/3 "jsPerf Performance test case: jQuery .remove vs .hide"
+
+These are relatively quick and easy fixes, but much more complicated things can be accomplished as well. For example, **@tie-rack**/[dotjs-files][tie-rack-dotjs-files] implemented a system that leverages [HTML5 localStorage][local-storage] to store [comments on reddit users][tie-rack-reddit]. Here is another example using dotjs to [fix obfuscated emails][obfuscate-email] in Gmail. The sky is the limit when you have arbitrary JavaScript at your disposal.
+
+[tie-rack-dotjs-files]: https://github.com/tie-rack/dotjs-files "Github: tie-rack's dotjs-files"
+[tie-rack-reddit]: https://github.com/tie-rack/dotjs-files/blob/master/reddit.com.js "Github: tie-rack's dotjs-files/reddit.com.js"
+[local-storage]: http://diveintohtml5.info/storage.html "Dive Into HTML5: Local Storage"
+[obfuscate-email]: http://blog.jazzychad.net/2012/05/25/gmail-dotjs-obfuscated-emails.html "Chad Etzel: Fixing Obfuscated Emails in Gmail with Dotjs"
+
+
 ## Dropbox
 
-- DotJS is great - but what if you want it on other computers?
-- Dropbox solves the pain point of syncing files
-- Simply have to 
+The benefits of dotjs are clear -- I have files for almost every website I visit frequently, and it's nice knowing I can alter how I experience websites as I see fit.
+
+I initially had a simple `~/.js` folder in the home directory of my Macbook. As I began using my desktop more, I wanted to have the same control there as well. Copying the files over would work temporarily but this clearly doesn't scale and would be a chore to maintain, not to mention angering the [DRY][dry-wikipedia] gods. Enter stage left: [Dropbox][dropbox].
+
+[dry-wikipedia]: http://en.wikipedia.org/wiki/Don't_repeat_yourself "Wikipedia: Don't Repeat Yourself"
+[dropbox]: https://www.dropbox.com/ "Dropbox"
+
+Dropbox solves the pain point of syncing files across computers. If the dotjs files are stored in Dropbox, then all changes will be immediately pushed out to all devices linked with my account.
+
 
 ## Setting up dotjs on OS X
 
-- Need rake, follow instructions on defunkt/dotjs
+Installation on OS X is straightforward. I will repeat it here for pedantic reasons:
+
+    :::bash
+    # Requires: OS X, Ruby 1.8, rake, Chrome, /usr/local/bin in $PATH
+    git clone http://github.com/defunkt/dotjs
+    cd dotjs
+    rake install
+
+This will install the Chrome extension, install the **djsd** daemon in `/user/local/bin`, and install a **.plist file** to control the daemon. One additional step that must be done to connect with Dropbox is to create a symbolic link in your home directory pointing to folder in Dropbox.
+
+    :::bash
+    mkdir ~/Dropbox/dotjs         # Create the directory in Dropbox
+    ln -s ~/Dropbox/dotjs ~/.js   # Create symbolic link
+
 
 ## Setting up dotjs on Windows 7
 
-
-
-- Project at p3lim/dotjs-win **@p3lim**/[dotjs-win][dotjs-win]
-- awkward, have to download the dotjs.cxm or whatever file
-- then navigate to: "chrome://chrome/extensions/"
-- then drag it into the window
-- Following instructions here: http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/  I was able to make a symbolic link 
-
-did:  mklink /J "C:\Users\Jeff\AppData\Local\Google\Chrome\User Data\Default\Extensions\longstringofletters\1.5_0\scripts" C:\Users\Jeff\Dropbox\dotjs
-which then told me "Junction created for {destination} <===> {source}"
+There is actually a separate dotjs project for Windows, at **@p3lim**/[dotjs-win][dotjs-win]. You must download the `dotjs.crx` file by navigating to it, and clicking "View Raw". When I tried double-clicking this file, Chrome informed me that only extensions from it's app store were allowed. To get around this, I navigated to `chrome://chrome/extensions/` and was able to drag the **.crx** file into this tab and it installed.
 
 [dotjs-win]: https://github.com/p3lim/dotjs-win "Github Page for p3lim's dotjs-win Chrome Extension"
+
+The next step is creating a symbolic link. Luckily Windows 7 and Vista both ship with the `mklink` command. Earlier versions of windows must download both the **Visual Studio 2005 redistributable** and the **Link Shell Extension**. Following this [guide on symbolic links in Windows][sym-link-windows], I issued the following command at an Admin-escalated Command Prompt:
+
+[sym-link-windows]: http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/ "How-To Geek: Complete Guide to Symbolic Links (symlinks) on Windows or Linux"
+
+    :::bash
+    mklink /J "C:\Users\Jeff\AppData\Local\Google\Chrome\User Data\Default\Extensions\longstringofletters\1.5_0\scripts" "C:\Users\Jeff\Dropbox\dotjs"
+
+This reported back: **Junction created for {destination} <===> {source}**. Note that the double quotes are required for paths containing spaces.
+
+
+## Conclusion and Next Steps
+
+It feels powerful to save a file on my laptop, immediately see a notification on my desktop that Dropbox synced, and to then refresh Chrome to see my changes are already active. I may be a little late to the Dropbox party, but I will surely be making good use of it going forward.
+
+One thing lacking with this setup is that mobile devices aren't able to utilize the dotjs files to change the appearance of website. This is a big deal because the ability to manipulate websites on a mobile device is possibly more important than on a laptop or a desktop. Some sites have mobile versions that have [responsive designs][ala-responsive], but many leave much to be desired.
+
+[ala-responsive]: http://www.alistapart.com/articles/responsive-web-design/ "A List Apart: Responsive Web Design"
+
+Another interesting direction to take would be to have all the JavaScript stored in the cloud, and have it execute browser side. This would 
+
+- do this in the browser instead, so I can see it from literally anywhere?
+
+
+
 
 
 
