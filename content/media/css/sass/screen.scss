@@ -99,7 +99,8 @@ div.codehilite pre, pre {
   overflow-x: auto;
   display: block;
   font-family: $monaco;
-  margin: 0 1.5em $margin-bottom 1.5em;
+  margin-bottom: $margin-bottom;
+  //margin: 0 1.5em $margin-bottom 1.5em;
   background: #f7f7f7;
   border: 1px solid #c8c8c8;
   border-left-width: 8px;
@@ -107,7 +108,7 @@ div.codehilite pre, pre {
   padding: 10px;
   code {
     color: #444;
-    font-size: 1em;
+    font-size: .875em;
   }
 }
 
