@@ -60,6 +60,9 @@ site, and a description of what they are used for.
 
 -   Need a `apple-touch-icon.png` in the base directory.
 
+-   Make sure overflow scroller looks good and functions in code
+    blocks ([antiscroll](https://github.com/LearnBoost/antiscroll/blob/master/index.html))
+
 ## Known Bugs
 
 -   **jQuery.timeago** (9/27/2012): The jquery.timeago.js plugin
