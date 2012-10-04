@@ -13,6 +13,7 @@ def serve():
   local('hyde serve')
 
 def last_published():
+  # CURRENTLY NOT FUNCTIONING AS INTENDED!
   # Log the most recent commit at time of publishing:
   filename = 'content/last-published.txt'
   local('rm -f %s' % filename)
@@ -22,7 +23,6 @@ def last_published():
   local('echo "\n%s" | cat >> %s' % (date, filename))
 
 def publish():
-  last_published()
   regen()
   local('hyde publish -p s3')
 
