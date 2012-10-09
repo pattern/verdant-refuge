@@ -13,7 +13,6 @@ plugins:
   # - hyde.ext.plugins.git.GitDatesPlugin
 context:
   data:
-    author: Jeff Pickelman
     description: Verdant Refuge - Jeff Pickelman's personal website.
     version: 0.1
     site_root_url: http://www.verdantrefuge.com
