@@ -1,0 +1,20 @@
+---
+extends: blank.j2
+---
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+{% for res in resource.node.walk_resources_sorted_by_time() %}
+  <url>
+    <loc>{{ site_root_url }}{{ res.full_url }}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{% endfor %}
+{% for page in sitemap %}
+  <url>
+    <loc>{{ site_root_url }}{{ page.url }}</loc>
+    <changefreq>{% if page.changefreq %}{{ page.changefreq }}{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if page.priority %}{{ page.priority }}{% else %}0.5{% endif %}</priority>
+  </url>
+{% endfor %}
+</urlset>
