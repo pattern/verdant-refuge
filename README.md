@@ -33,19 +33,19 @@ site, and a description of what they are used for.
 [yaml]: https://github.com/mojombo/jekyll/wiki/yaml-front-matter "Describes YAML front matter - ignore the Jekyll-specific bits!"
 [dry]: http://en.wikipedia.org/wiki/Don't_repeat_yourself "Wikipedia: Don't Repeat Yourself (DRY)"
 
--   **AutoExtendPlugin** - This plugin wires up the `extends` and
+-   [AutoExtendPlugin][1] - This plugin wires up the `extends` and
     `default_block` keys in the YAML front matter, allowing for easy
     template inheritance.
 
--   **UrlCleanerPlugin** - Allows for tighter control of the URLs of
+-   [UrlCleanerPlugin][2] - Allows for tighter control of the URLs of
     the site.  You can choose which extensions to hide and whether to
     append a trailing slash, and whether to drop "index.html" from the
     end of urls containing it.
 
--   **TaggerPlugin** - This wires up the `tags` key in the front
+-   [TaggerPlugin][3] - This wires up the `tags` key in the front
     matter.  It takes a list of tags to be associated with the file.
 
--   **SorterPlugin** - This allows you to define sorted sets of content
+-   [SorterPlugin][4] - This allows you to define sorted sets of content
     which obey certain requirements.  The most common example - and the
     only list I have defines thus far - is a listing of blog posts,
     sorted in reverse creation order, omitting all non-listable posts.
@@ -53,8 +53,21 @@ site, and a description of what they are used for.
     `walk_resources_sorted_by_[name]`, `prev_by_[name]`, and
     `next_by_[name]`.
 
--   **TextlinksPlugin** - This simply gives you a more concise way to
+-   [TextlinksPlugin][5] - This simply gives you a more concise way to
     link to both content urls, and media urls.
+
+-   [ImageSizerPlugin][6] - This adds the _height_ and _width_
+    attributes to `<img>`s which don't already have them. This is good
+    practice for page rendering reasons. Also could come in handy if I
+    ever decide to implement delayed-loading of images (so the
+    placeholders would have correct dimensions).
+
+[1]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/auto_extend.py
+[2]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/urls.py
+[3]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/tagger.py
+[4]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/sorter.py
+[5]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/textlinks.py
+[6]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/images.py
 
 ## Todo
 
@@ -62,6 +75,8 @@ site, and a description of what they are used for.
 
 -   Make sure overflow scroller looks good and functions in code
     blocks ([antiscroll](https://github.com/LearnBoost/antiscroll/blob/master/index.html))
+
+-   Create a Fabric function for creating new posts.
 
 ## Known Bugs
 
