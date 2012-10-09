@@ -32,6 +32,21 @@ context:
       - name: Facebook
         link: https://www.facebook.com/pickelman
         title: Facebook Profile
+    sitemap:
+      - name: Index
+        url: /
+        priority: 0.8
+        changefreq: weekly
+      - name: About
+        url: /about/
+      - name: Resources
+        url: /links/
+      - name: Projects
+        url: /projects/
+      - name: Writing
+        url: /writing/
+        priority: 0.8
+        changefreq: weekly
 urlcleaner:
   index_file_names:
     # Identifies the files that represents a directory listing.
