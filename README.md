@@ -74,9 +74,12 @@ site, and a description of what they are used for.
 -   Need a `apple-touch-icon.png` in the base directory.
 
 -   Make sure overflow scroller looks good and functions in code
-    blocks ([antiscroll](https://github.com/LearnBoost/antiscroll/blob/master/index.html))
+    blocks ([antiscroll](https://github.com/LearnBoost/antiscroll/blob/master/index.html)).
 
 -   Create a Fabric function for creating new posts.
+
+-   Consider changing the deployment process to deploy the HEAD as
+    opposed to the current local filesystem.
 
 ## Known Bugs
 
