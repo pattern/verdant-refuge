@@ -1,22 +1,21 @@
 <!doctype html>
 <head>
-  {% block starthead %}
-  {% endblock starthead %}
   <meta charset="{{ resource.meta.charset }}">
   <meta http-equiv="X-UA-Compatible" content="{{ resource.meta.compatibility }}">
   <title>{% block title %}{{ resource.meta.title }} | Verdant Refuge{% endblock %}</title>
-  <meta name="description" content="{% if resource.meta.tagline -%}
-                                      {{ resource.meta.tagline }}
-                                    {%- else -%}
-                                      {{ resource.meta.description }}
-                                    {%- endif %}">
+  <meta name="description" content="
+    {%- filter markdown|typogrify|striptags -%}
+      {%- if resource.meta.tagline -%}
+        {{ resource.meta.tagline }}
+      {%- else -%}
+        {{ resource.meta.description }}
+      {%- endif -%}
+    {%- endfilter %}">
   <meta name="author" content="{{ resource.meta.author }}">
   <meta name="viewport" content="{{ resource.meta.viewport }}">
 
-  {% block css %}
   <link rel="stylesheet" href="{{ media_url('css/screen.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
-  {% endblock css %}
 
   <script src="{{ media_url('js/libs/modernizr-2.5.3.min.js') }}"></script>
   
@@ -37,7 +36,7 @@
       <div id="header_inner_2">
         <div id="title">
           <h1>
-            <a href="/"><span>Verdant</span><span>Refuge</span></a>
+            <a href="/" title="Verdant Refuge Home"><span>Verdant</span><span>Refuge</span></a>
           </h1>
           <div>
             <a href="/about/">
