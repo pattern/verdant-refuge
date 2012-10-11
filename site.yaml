@@ -41,6 +41,7 @@ context:
         url: /about/
       - name: Resources
         url: /links/
+        changefreq: weekly
       - name: Projects
         url: /projects/
       - name: Writing
