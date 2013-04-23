@@ -1,0 +1,44 @@
+---
+title: "AngularJS: Custom Symbols - Interpolate Provider"
+tagline: Explains how to use AngularJS's simple `$interpolateProvider` to customize the templating symbols used.  Useful for playing nicely with Django.
+date: April 22, 2013
+created: !!timestamp '2013-4-22 17:30:00 +0:00'
+tags:
+  - angularjs
+  - django
+  - templating
+---
+
+## The Problem
+
+My first exposure to [Angular][angular] was in a [Django][django] environment. I was trying to format search results, and Angular seemed like a good way to structure and display the resulting data. I was soon confronted with the fact that both Angular and Django use the same `{% raw %}{{{% endraw %}` and `{% raw %}}}{% endraw %}` delimiters. Thus any Angular templating logic would throw Django syntax errors before as soon as it was interpreted.
+
+[angular]: http://angularjs.org/ "AngluarJS Homepage"
+[django]: https://www.djangoproject.com/ "Django Project Homepage"
+
+## The Solution
+
+Enter Angular's somewhat-well-hidden (from most of my attempted Google queries) [$interpolateProvider][angular-interpolate-provider] service. Quite simply:
+
+    :::js+cheetah
+    angular.module('app', []).
+      config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('<[');
+        $interpolateProvider.endSymbol(']>');
+      });
+
+As should be obvious, the symbols are now `<[` and `]>`, and Django will treat them just like any other markup, passing them right through for Angular to do its thing. There is nothing special about this particular choice, I personally wanted something without any curly braces so that they were visually distinct to avoid any possible confusion.
+
+## Irony? Triple Threat? Inception?
+
+Amusingly, [Jinja2][jinja2] -- the templating language I use in conjunction with [Hyde][hyde] for this blog -- also uses the beloved `{% raw %}{{{% endraw %}` and `{% raw %}}}{% endraw %}` to delimit print statements. As such, I must use the following to generate them:
+
+    :::jinja
+    {% raw %}{{% endraw %}% raw %{% raw %}}{% endraw %}{% raw %}{{{% endraw %}{% raw %}{{% endraw %}% endraw %{% raw %}}{% endraw %} and {% raw %}{{% endraw %}% raw %{% raw %}}{% endraw %}{% raw %}}}{% endraw %}{% raw %}{{% endraw %}% endraw %{% raw %}}{% endraw %}
+
+Trust me when I say you do not want to see the necessary Markdown to get the above to display properly!
+
+[jinja2]: http://jinja.pocoo.org/docs/ "Jinja2 Documentation"
+[hyde]: https://github.com/hyde/hyde "Github: Hyde"
+
+[angular-interpolate-provider]: http://docs.angularjs.org/api/ng.$interpolateProvider "AngularJS Documentation: $interpolateProvider Service"
