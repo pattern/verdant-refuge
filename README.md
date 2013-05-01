@@ -69,6 +69,26 @@ site, and a description of what they are used for.
 [5]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/textlinks.py
 [6]: https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/images.py
 
+## Typical Development Usage
+
+Have two terminal windows open. In the first, `cd` to project directory and `workon vr`. In the second, do the same, and then `compass watch`. Whenever the site needs to be rebuilt and tested locally, run `fab serve`, which will host the site at `http://loalhost:8080/`.
+
+## Publishing to Amazon S3
+
+In the Verdant Refuge virtualenv folder, I appended the following to the `bin/activate` script which is run whenever the environment is activated:
+
+    :::bash
+    AWS_ACCESS_KEY_ID=<<REDACTED>>
+    export AWS_ACCESS_KEY_ID
+
+    AWS_SECRET_ACCESS_KEY=<<REDACTED>>
+    export AWS_SECRET_ACCESS_KEY
+
+This exports the necessary bash environment variables so that the [boto][boto] library can authenticate with S3. This is detailed on the linked boto Github project page.
+
+[boto]: https://github.com/boto/boto "Github: boto project home"
+
+
 ## Todo
 
 -   Need a `apple-touch-icon.png` in the base directory.
