@@ -90,6 +90,13 @@ img.right {
   margin-bottom: 15px;
 }
 
+img.center {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15px;
+  width: 70%;
+}
+
 
 /* Two classes to position <figure>s in articles: */
 
@@ -107,6 +114,10 @@ figure.left {
   figcaption {
     width: inherit;
     text-align: center;
+    p {
+      margin-bottom: 0px;
+      line-height: 1.25em;
+    }
   }
 }
 
@@ -115,6 +126,10 @@ figure.right {
   @extend img.right;    /* And the correct position and margin */
 }
 
+figure.center {
+  @extend figure.left;
+  @extend img.center;
+}
 
 b, .bold {
   font-weight: 600;

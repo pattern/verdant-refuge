@@ -72,6 +72,11 @@ p.update:last-child {
   margin-bottom: 0;
 }
 
+span.date {
+  color: #ccc;
+  font-size: 14px;
+}
+
 figcaption {
   font-family: $palatino;
   font-size: .85em;

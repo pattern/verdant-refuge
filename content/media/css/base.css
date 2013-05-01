@@ -124,7 +124,7 @@ td[align=center] {
 /* Colors */
 /* Two classes to position <img>s in articles: */
 /* line 81, sass/base.scss */
-img.left, figure.left, figure.right {
+img.left, figure.left, figure.right, figure.center {
   float: left;
   margin-right: 15px;
   margin-bottom: 15px;
@@ -137,49 +137,62 @@ img.right, figure.right {
   margin-bottom: 15px;
 }
 
+/* line 93, sass/base.scss */
+img.center, figure.center {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15px;
+  width: 70%;
+}
+
 /* Two classes to position <figure>s in articles: */
-/* line 96, sass/base.scss */
-figure.left, figure.right {
+/* line 103, sass/base.scss */
+figure.left, figure.right, figure.center {
   border: 3px solid #f0f0f0;
   padding: 3px;
 }
-/* line 100, sass/base.scss */
-figure.left a, figure.right a {
+/* line 107, sass/base.scss */
+figure.left a, figure.right a, figure.center a {
   width: inherit;
 }
-/* line 102, sass/base.scss */
-figure.left a img, figure.right a img {
+/* line 109, sass/base.scss */
+figure.left a img, figure.right a img, figure.center a img {
   width: inherit;
   margin-bottom: 0.625em;
 }
-/* line 107, sass/base.scss */
-figure.left figcaption, figure.right figcaption {
+/* line 114, sass/base.scss */
+figure.left figcaption, figure.right figcaption, figure.center figcaption {
   width: inherit;
   text-align: center;
 }
+/* line 117, sass/base.scss */
+figure.left figcaption p, figure.right figcaption p, figure.center figcaption p {
+  margin-bottom: 0px;
+  line-height: 1.25em;
+}
 
-/* line 113, sass/base.scss */
+/* line 124, sass/base.scss */
 figure.right {
   /* Obtain all the figure styling */
   /* And the correct position and margin */
 }
 
-/* line 119, sass/base.scss */
+/* line 134, sass/base.scss */
 b, .bold {
   font-weight: 600;
 }
 
-/* line 123, sass/base.scss */
+/* line 138, sass/base.scss */
 .grey {
   color: #999999;
 }
 
-/* line 127, sass/base.scss */
+/* line 142, sass/base.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 131, sass/base.scss */
+/* line 146, sass/base.scss */
 .amp {
   font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif;
   font-style: italic;
@@ -187,12 +200,12 @@ b, .bold {
   padding: 0 1px;
 }
 
-/* line 139, sass/base.scss */
+/* line 154, sass/base.scss */
 ul {
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
-/* line 142, sass/base.scss */
+/* line 157, sass/base.scss */
 ul li {
   background: url(data:image/gif;base64,R0lGODlhBQAFAIAAADG2agAAACH5BAAAAAAALAAAAAAFAAUAAAIEhI+pWAA7) no-repeat 2px 12px;
   *background: url(mhtml:/media/css/screen.css?green_bullet) no-repeat 2px 12px;
@@ -202,24 +215,24 @@ ul li {
   line-height: 1.75em;
   margin-bottom: 0.625em;
 }
-/* line 150, sass/base.scss */
+/* line 165, sass/base.scss */
 ul li p {
   font-size: 100%;
   line-height: 1.75em;
 }
-/* line 157, sass/base.scss */
+/* line 172, sass/base.scss */
 ul li ul li {
   font-size: 100%;
 }
-/* line 164, sass/base.scss */
+/* line 179, sass/base.scss */
 ul li p:first-child {
   margin-bottom: 0;
 }
-/* line 169, sass/base.scss */
+/* line 184, sass/base.scss */
 ul li p:not(:first-child), ul li table {
   margin-left: 2em;
 }
-/* line 174, sass/base.scss */
+/* line 189, sass/base.scss */
 ul li p:not(:first-child):not(:last-child) {
   margin-bottom: 0.625em;
 }
