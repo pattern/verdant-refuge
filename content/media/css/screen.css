@@ -439,7 +439,7 @@ blockquote {
   background-color: #ecfaf2;
   padding: 1em;
   font-family: 'HelveticaNeue-LightItalic';
-  margin: 0 2.5em 1.25em 2.5em;
+  margin-bottom: 1.25em;
   border: 1px solid #9ce4bb;
   border-left-width: 8px;
 }
@@ -693,6 +693,13 @@ article {
 }
 
 /* line 348, sass/screen.scss */
+.read_more {
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  text-align: center;
+  margin-bottom: 1.875em;
+}
+
+/* line 354, sass/screen.scss */
 #comments, #comments_omitted {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -704,7 +711,7 @@ article {
   margin-top: 30px;
 }
 
-/* line 355, sass/screen.scss */
+/* line 361, sass/screen.scss */
 #comments_omitted {
   display: none;
   font-style: italic;
